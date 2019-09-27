@@ -1,0 +1,20 @@
+uuid: b23b6d21-b6d4-41a9-86ce-aed46f441273
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - node.type.assignment
+  module:
+    - user
+id: node.assignment.teaser
+targetEntityType: node
+bundle: assignment
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

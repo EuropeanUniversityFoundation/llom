@@ -1,0 +1,28 @@
+uuid: 54476975-e95f-4fa9-bd1d-e6ef65975bc3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.assignment.field_assignment
+    - node.type.assignment
+  module:
+    - h5p
+    - user
+id: node.assignment.default
+targetEntityType: node
+bundle: assignment
+mode: default
+content:
+  field_assignment:
+    weight: 101
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: h5p_default
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

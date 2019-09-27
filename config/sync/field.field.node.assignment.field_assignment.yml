@@ -1,0 +1,23 @@
+uuid: 3607616a-0831-4b25-bca3-9750d6a1d7b6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_assignment
+    - node.type.assignment
+  module:
+    - h5p
+id: node.assignment.field_assignment
+field_name: field_assignment
+entity_type: node
+bundle: assignment
+label: Assignment
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    h5p_content_id: null
+default_value_callback: ''
+settings: {  }
+field_type: h5p
