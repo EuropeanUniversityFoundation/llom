@@ -20,10 +20,13 @@ module:
   field_ui: 0
   file: 0
   filter: 0
+  h5p: 0
+  h5peditor: 0
   help: 0
   history: 0
   image: 0
   link: 0
+  llom_h5p_logging: 0
   menu_ui: 0
   node: 0
   options: 0
