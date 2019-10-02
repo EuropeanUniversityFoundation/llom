@@ -1,0 +1,10 @@
+uuid: 444d55ba-5453-4bee-9e5f-848b89601ab7
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: vpB5T_gr2VR9vD9Eh0TboeVYxQhYrzuzgbEiFRB3-5s
+name: Topic
+vid: topic
+description: 'Topic of the Assignment'
+weight: 0

@@ -1,0 +1,10 @@
+uuid: 35470a8c-4d21-43d5-8e14-5d4bdf15ea92
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: RiTpmaFrJZWxktzo1AllodmNFZr9K0mzjHrzDhCBUvU
+name: Level
+vid: level
+description: 'Level of the Assignment'
+weight: 0

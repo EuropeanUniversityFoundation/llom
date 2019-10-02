@@ -1,0 +1,16 @@
+uuid: 898f0506-9e10-48a8-9700-b6b0ebaa9436
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - llom_h5p_content
+_core:
+  default_config_hash: s-c28x2se4E85C4eHitG3HO2pD5KmPXxPIjsZdWstQg
+name: 'Automated Assignment'
+type: llom_h5p_content
+description: 'Automated Assignment using the H5P Rich Content Framework'
+help: 'Automated Assignment using the H5P Rich Content Framework'
+new_revision: false
+preview_mode: 1
+display_submitted: true

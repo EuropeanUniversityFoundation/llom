@@ -22,7 +22,9 @@ class H5PFinishedEvent implements EventSubscriberInterface{
   }
 
   public function onH5PFinished(FinishedEvent $event){
-    \Drupal::logger('H5P Event')->notice("test");
+    $quizData = $event->getQuizFields();
+    dsm($quizData);
+    \Drupal::logger('H5P Event')->notice($quizData['points'].'/'.$quizData['max_points']);
     return;
   }
 

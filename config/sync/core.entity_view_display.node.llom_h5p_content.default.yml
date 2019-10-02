@@ -1,0 +1,34 @@
+uuid: d0e02279-46b2-4b3e-998b-04004b2f10e8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.llom_h5p_content.field_llom_assignment
+    - field.field.node.llom_h5p_content.field_llom_level
+    - field.field.node.llom_h5p_content.field_llom_topic
+    - node.type.llom_h5p_content
+  module:
+    - h5p
+    - user
+_core:
+  default_config_hash: X2XuIfMHecn5QKKU7L1R9q7SaA1ZvR8XixZ6aBClMaM
+id: node.llom_h5p_content.default
+targetEntityType: node
+bundle: llom_h5p_content
+mode: default
+content:
+  field_llom_assignment:
+    weight: 101
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: h5p_default
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_llom_level: true
+  field_llom_topic: true

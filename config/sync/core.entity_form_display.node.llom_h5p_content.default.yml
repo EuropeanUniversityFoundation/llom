@@ -1,33 +1,52 @@
-uuid: 06f57c5c-49be-45d1-9c33-ce01c83ef193
+uuid: 25f5000e-e8c8-42d5-9204-887a2bdb175e
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.assignment.field_assignment
-    - node.type.assignment
+    - field.field.node.llom_h5p_content.field_llom_assignment
+    - field.field.node.llom_h5p_content.field_llom_level
+    - field.field.node.llom_h5p_content.field_llom_topic
+    - node.type.llom_h5p_content
   module:
     - h5peditor
     - path
-id: node.assignment.default
+_core:
+  default_config_hash: H8NJMPM6rNjr_SmLuz7dZd87OuN8Wo6slM9fyfJiXGw
+id: node.llom_h5p_content.default
 targetEntityType: node
-bundle: assignment
+bundle: llom_h5p_content
 mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 3
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_assignment:
-    weight: 1
+  field_llom_assignment:
+    weight: 3
     settings: {  }
     third_party_settings: {  }
     type: h5p_editor
     region: content
+  field_llom_level:
+    type: options_select
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_llom_topic:
+    type: entity_reference_autocomplete
+    weight: 1
+    region: content
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   path:
     type: path
-    weight: 6
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -35,21 +54,21 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 4
+    weight: 6
     region: content
     third_party_settings: {  }
   status:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 7
+    weight: 9
     region: content
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 5
+    weight: 7
     region: content
     third_party_settings: {  }
   title:
@@ -62,7 +81,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 2
+    weight: 4
     settings:
       match_operator: CONTAINS
       size: 60

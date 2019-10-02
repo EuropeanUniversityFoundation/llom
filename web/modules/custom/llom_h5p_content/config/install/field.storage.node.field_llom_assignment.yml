@@ -1,12 +1,11 @@
-uuid: 55b9cb52-b78d-47a9-a439-a492d8d7e8ed
 langcode: en
 status: true
 dependencies:
   module:
     - h5p
     - node
-id: node.field_assignment
-field_name: field_assignment
+id: node.field_llom_assignment
+field_name: field_llom_assignment
 entity_type: node
 type: h5p
 settings: {  }

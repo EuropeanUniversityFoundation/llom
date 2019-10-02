@@ -1,0 +1,8 @@
+name: 'LLOM H5P Content'
+type: module
+description: 'LLOM H5P Content'
+core: 8.x
+package: 'LLOM'
+dependencies:
+  - h5p:h5p
+  - llom_taxonomy
