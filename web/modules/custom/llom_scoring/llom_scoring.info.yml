@@ -1,0 +1,7 @@
+name: 'LLOM Scoring'
+type: module
+description: 'LLOM Scoring'
+core: 8.x
+package: 'LLOM'
+dependencies:
+  - llom_h5p_content

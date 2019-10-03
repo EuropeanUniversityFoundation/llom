@@ -1,5 +1,5 @@
 services:
   h5pfinished_event:
-    class: 'Drupal\llom_h5p_logging\EventSubscriber\H5PFinishedEvent'
+    class: 'Drupal\llom_scoring\EventSubscriber\H5PFinishedEvent'
     tags:
       - { name: 'event_subscriber' }
