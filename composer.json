@@ -80,6 +80,11 @@
             "web/themes/contrib/{$name}": ["type:drupal-theme"],
             "drush/Commands/{$name}": ["type:drupal-drush"]
         },
+        "patches": {
+          "drupal/h5p": {
+            "Code assumes score is int, not stored in case of double": "https://www.drupal.org/files/issues/2019-10-09/3086807_1.patch"
+          }
+        },
         "drupal-scaffold": {
             "initial": {
                 ".editorconfig": "../.editorconfig",
