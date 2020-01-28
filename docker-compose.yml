@@ -42,7 +42,7 @@ services:
 #      - ./:/var/www/html
 ## For macOS users (https://wodby.com/stacks/drupal/docs/local/docker-for-mac/)
 #      - ./:/var/www/html:cached # User-guided caching
-      - docker-sync:/var/www/html # Docker-sync
+      - llom_sync:/var/www/html # Docker-sync
 ## For XHProf and Xdebug profiler traces
 #      - files:/mnt/files
 
@@ -62,7 +62,7 @@ services:
 #      - ./:/var/www/html
 # For macOS users (https://wodby.com/stacks/drupal/docs/local/docker-for-mac/)
 #      - ./:/var/www/html:cached # User-guided caching
-      - docker-sync:/var/www/html # Docker-sync
+      - llom_sync:/var/www/html # Docker-sync
     labels:
       - 'traefik.backend=${PROJECT_NAME}_nginx'
       - 'traefik.port=80'
@@ -286,7 +286,7 @@ services:
 
 volumes:
 ## Docker-sync for macOS users
-  docker-sync:
+  llom_sync:
     external: true
 ## For Xdebug profiler
 #  files:
