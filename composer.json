@@ -26,7 +26,7 @@
         "drupal/bootstrap": "3.21",
         "drupal/config_installer": "1.5",
         "drupal/console": "^1.0.2",
-        "drupal/core": "8.7.11",
+        "drupal/core": "8.8.1",
         "drupal/h5p": "1.0-rc17",
         "drush/drush": "9.0.0",
         "vlucas/phpdotenv": "^2.4",
