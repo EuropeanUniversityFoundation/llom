@@ -9,7 +9,6 @@ dependencies:
     - node.type.llom_h5p_content
   module:
     - h5peditor
-    - path
 _core:
   default_config_hash: H8NJMPM6rNjr_SmLuz7dZd87OuN8Wo6slM9fyfJiXGw
 id: node.llom_h5p_content.default
@@ -36,39 +35,16 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_llom_topic:
-    type: entity_reference_autocomplete_tags
+    type: options_select
     weight: 1
     region: content
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  path:
-    type: path
-    weight: 8
-    region: content
     settings: {  }
-    third_party_settings: {  }
-  promote:
-    type: boolean_checkbox
-    settings:
-      display_label: true
-    weight: 6
-    region: content
     third_party_settings: {  }
   status:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 9
-    region: content
-    third_party_settings: {  }
-  sticky:
-    type: boolean_checkbox
-    settings:
-      display_label: true
-    weight: 7
+    weight: 6
     region: content
     third_party_settings: {  }
   title:
@@ -86,6 +62,10 @@ content:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
+      match_limit: 10
     region: content
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  path: true
+  promote: true
+  sticky: true

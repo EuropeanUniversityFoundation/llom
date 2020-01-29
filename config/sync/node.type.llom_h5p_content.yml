@@ -5,12 +5,18 @@ dependencies:
   enforced:
     module:
       - llom_h5p_content
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
 _core:
   default_config_hash: s-c28x2se4E85C4eHitG3HO2pD5KmPXxPIjsZdWstQg
-name: 'Automated Assignment'
+name: Assignment
 type: llom_h5p_content
-description: 'Automated Assignment using the H5P Rich Content Framework'
+description: 'Assignment using the H5P Rich Content Framework'
 help: 'Automated Assignment using the H5P Rich Content Framework'
 new_revision: false
-preview_mode: 1
+preview_mode: 0
 display_submitted: true

@@ -1,0 +1,22 @@
+uuid: 05097387-f409-45fb-9929-9f87894cb138
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.llom_h5p_content
+id: node.llom_h5p_content.promote
+field_name: promote
+entity_type: node
+bundle: llom_h5p_content
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
