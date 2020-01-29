@@ -1,0 +1,14 @@
+uuid: e0c785a8-23ae-476b-92d3-0c0935da1ced
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.academic_staff
+  module:
+    - user
+id: user_add_role_action.academic_staff
+label: 'Add the Academic Staff role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: academic_staff
