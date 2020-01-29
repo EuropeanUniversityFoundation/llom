@@ -28,6 +28,7 @@
         "drupal/console": "^1.0.2",
         "drupal/core": "8.8.1",
         "drupal/h5p": "1.0-rc17",
+        "drupal/recaptcha": "^2.4",
         "drush/drush": "9.0.0",
         "vlucas/phpdotenv": "^2.4",
         "webflo/drupal-finder": "^1.0.0",
