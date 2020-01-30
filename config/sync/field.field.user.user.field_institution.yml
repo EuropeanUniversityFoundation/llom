@@ -1,0 +1,20 @@
+uuid: 5e8a57ab-08ef-4b19-be9a-eb08cdb3a2bf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_institution
+  module:
+    - user
+id: user.user.field_institution
+field_name: field_institution
+entity_type: user
+bundle: user
+label: Institution
+description: 'The HEI you represent'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

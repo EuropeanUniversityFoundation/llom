@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_llom_level
+    - node.type.llom_h5p_content
+    - taxonomy.vocabulary.level
+id: node.llom_h5p_content.field_llom_level
+field_name: field_llom_level
+entity_type: node
+bundle: llom_h5p_content
+label: Level
+description: ''
+required: true
+translatable: false
+default_value: { }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      level: level
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

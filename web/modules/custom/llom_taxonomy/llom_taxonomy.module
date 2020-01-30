@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains llom_taxonomy.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function llom_taxonomy_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the llom_taxonomy module.
+    case 'help.page.llom_taxonomy':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('LLOM Taxonomy Vocabulary') . '</p>';
+      return $output;
+
+    default:
+  }
+}

@@ -1,0 +1,25 @@
+uuid: a150d842-5ed4-4dca-abc8-1ebae9bb3bc0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_llom_assignment
+    - node.type.llom_h5p_content
+  module:
+    - h5p
+_core:
+  default_config_hash: AGQTBGHS376oEh2Z0i92dhxmSEPavG7vcldLeJ9Nua0
+id: node.llom_h5p_content.field_llom_assignment
+field_name: field_llom_assignment
+entity_type: node
+bundle: llom_h5p_content
+label: Assignment
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    h5p_content_id: null
+default_value_callback: ''
+settings: {  }
+field_type: h5p

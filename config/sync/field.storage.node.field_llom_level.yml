@@ -1,0 +1,22 @@
+uuid: 628fc7f1-108a-4364-b1d1-820f0473decd
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+_core:
+  default_config_hash: 8maRIHC17_TOSc5Plc-qvsCGOuOg5u5rYMeBoT_AetI
+id: node.field_llom_level
+field_name: field_llom_level
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

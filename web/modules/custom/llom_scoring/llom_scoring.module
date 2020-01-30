@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains llom_scoring.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function llom_scoring_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the llom_scoring module.
+    case 'help.page.llom_scoring':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('LLOM Scoring') . '</p>';
+      return $output;
+
+    default:
+  }
+}

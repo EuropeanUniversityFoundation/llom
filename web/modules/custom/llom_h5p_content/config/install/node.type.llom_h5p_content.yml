@@ -1,0 +1,11 @@
+langcode: en
+dependencies:
+  enforced:
+    module:
+      - llom_h5p_content
+name: 'Automated Assignment'
+type: llom_h5p_content
+description: 'Automated Assignment using the H5P Rich Content Framework'
+help: 'Automated Assignment using the H5P Rich Content Framework'
+new_revision: false
+preview_mode: 1

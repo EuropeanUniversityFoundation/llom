@@ -7,7 +7,7 @@
     "authors": [
         {
             "name": "Jeroen van Lent",
-            "role": "IT Project Officer"
+            "email": "jeroen.vanlent@uni-foundation.eu"
         }
     ],
     "repositories": [
@@ -20,21 +20,25 @@
         "composer/installers": "^1.2",
         "cweagans/composer-patches": "^1.6.5",
         "drupal-composer/drupal-scaffold": "^2.5",
-        "drupal/console": "^1.0.2",
-        "drupal/core": "8.7.7",
-        "drush/drush": "9.0.0",
-        "drupal/config_installer": "1.5",
-        "drupal/admin_toolbar": "2.0-beta2",
-        "drupal/adminimal_admin_toolbar": "1.9",
+        "drupal/admin_toolbar": "2.0",
+        "drupal/adminimal_admin_toolbar": "1.10",
         "drupal/adminimal_theme": "1.5",
+        "drupal/bootstrap": "3.21",
+        "drupal/config_installer": "1.5",
+        "drupal/console": "^1.0.2",
+        "drupal/core": "8.8.1",
+        "drupal/h5p": "1.0-rc17",
+        "drupal/recaptcha": "^2.4",
+        "drush/drush": "9.0.0",
         "vlucas/phpdotenv": "^2.4",
         "webflo/drupal-finder": "^1.0.0",
         "webmozart/path-util": "^2.3",
         "zaporylie/composer-drupal-optimizations": "^1.0"
     },
     "require-dev": {
-        "webflo/drupal-core-require-dev": "^8.7.0",
-        "phpro/grumphp": "^0.15.0"
+        "phpro/grumphp": "^0.16.1",
+        "drupal/devel": "2.1",
+        "webflo/drupal-core-require-dev": "^8.7.0"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -76,6 +80,11 @@
             "web/profiles/contrib/{$name}": ["type:drupal-profile"],
             "web/themes/contrib/{$name}": ["type:drupal-theme"],
             "drush/Commands/{$name}": ["type:drupal-drush"]
+        },
+        "patches": {
+          "drupal/h5p": {
+            "Code assumes score is int, not stored in case of double": "https://www.drupal.org/files/issues/2019-10-09/3086807_1.patch"
+          }
         },
         "drupal-scaffold": {
             "initial": {

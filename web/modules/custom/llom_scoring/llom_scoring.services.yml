@@ -1,0 +1,6 @@
+services:
+  h5pfinished_event:
+    class: 'Drupal\llom_scoring\EventSubscriber\H5PFinishedEvent'
+    arguments: ['@current_user', '@entity_type.manager', '@logger.factory', '@messenger']
+    tags:
+      - { name: 'event_subscriber' }
