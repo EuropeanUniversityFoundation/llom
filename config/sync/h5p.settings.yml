@@ -1,10 +1,10 @@
-h5p_frame: 1
+h5p_frame: 0
 h5p_export: 3
-h5p_embed: 3
-h5p_copyright: 1
-h5p_icon: 1
+h5p_embed: 0
+h5p_copyright: 0
+h5p_icon: 0
 h5p_default_path: h5p
-h5p_revisioning: 1
+h5p_revisioning: 0
 h5p_whitelist: 'json png jpg jpeg gif bmp tif tiff svg eot ttf woff woff2 otf webm mp4 ogg mp3 txt pdf rtf doc docx xls xlsx ppt pptx odt ods odp xml csv diff patch swf md textile wav'
 h5p_library_whitelist_extras: 'js css'
 h5p_save_content_state: 0

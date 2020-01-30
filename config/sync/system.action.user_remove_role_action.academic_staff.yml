@@ -1,0 +1,14 @@
+uuid: e8027c40-a201-474a-b3e1-9652e204115c
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.academic_staff
+  module:
+    - user
+id: user_remove_role_action.academic_staff
+label: 'Remove the Academic Staff role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: academic_staff

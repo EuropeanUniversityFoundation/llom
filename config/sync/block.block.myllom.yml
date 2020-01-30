@@ -1,0 +1,34 @@
+uuid: cf76a94a-bc3f-4628-b761-77cae1e80a37
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.my-classroom
+  module:
+    - system
+    - user
+  theme:
+    - bootstrap
+id: myllom
+theme: bootstrap
+region: sidebar_second
+weight: 0
+provider: null
+plugin: 'system_menu_block:my-classroom'
+settings:
+  id: 'system_menu_block:my-classroom'
+  label: 'My LLOM'
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  user_role:
+    id: user_role
+    roles:
+      administrator: administrator
+      academic_staff: academic_staff
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'

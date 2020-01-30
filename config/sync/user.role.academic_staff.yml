@@ -1,0 +1,13 @@
+uuid: b9ca56b4-bf04-4ed6-b07e-78b01204ee30
+langcode: en
+status: true
+dependencies: {  }
+id: academic_staff
+label: 'Academic Staff'
+weight: 3
+is_admin: null
+permissions:
+  - 'access editor'
+  - 'create llom_h5p_content content'
+  - 'edit own llom_h5p_content content'
+  - 'view own unpublished content'
