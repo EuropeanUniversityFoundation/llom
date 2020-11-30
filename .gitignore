@@ -23,5 +23,16 @@
 # Ignore .env files as they are personal
 /.env
 
+# Ignore NodeJS modules
+node_modules/
+
+# Ignore specific components of docker4drupal
+/docker-compose.override.yml
+/.env
+
 #Ignore Docker-Sync
 /.docker-sync/
+
+# Ignore the backup files
+/backup/*
+!/backup/.gitkeep
