@@ -1,0 +1,6 @@
+role_to_select:
+  academic_staff: academic_staff
+  administrator: '0'
+registration_mode: admin
+_core:
+  default_config_hash: o1wWkhSOJotsHFgvzESaUOiTWhLak62cKBDyEtewAIM

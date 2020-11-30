@@ -9,5 +9,6 @@ is_admin: null
 permissions:
   - 'access editor'
   - 'create llom_h5p_content content'
+  - 'delete own llom_h5p_content content'
   - 'edit own llom_h5p_content content'
   - 'view own unpublished content'
