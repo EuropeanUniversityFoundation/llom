@@ -1,0 +1,18 @@
+version: "3.7"
+
+services:
+# Enable the NodeJS container for theme development
+# Copy this file and name it docker-compose.override.yml
+# The new file will be ignored by git so the overrides will be local only
+  node:
+    image: wodby/node:$NODE_TAG
+    container_name: "${PROJECT_NAME}_node"
+    working_dir: /var/www/html/web/themes/custom/machine_name_of_the_custom_theme
+    labels:
+    - "traefik.http.services.${PROJECT_NAME}_node.loadbalancer.server.port=3000"
+    - "traefik.http.routers.${PROJECT_NAME}_node.rule=Host(`node.${PROJECT_BASE_URL}`)"
+    expose:
+    - "3000"
+    volumes:
+    - ./:/var/www/html
+    command: sh -c 'npm install --global gulp-cli && npm install && tail -f /dev/null'

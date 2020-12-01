@@ -1,0 +1,9 @@
+version: "3.7"
+
+services:
+# Use a personal access token to get packages from the Github API
+# Copy this file and name it docker-compose.override.yml
+# The new file will be ignored by git so the overrides will be local only
+  php:
+    environment:
+      COMPOSER_AUTH: '{"github-oauth": {"github.com": "${COMPOSER_AUTH}"}}'
