@@ -79,7 +79,7 @@ install_configure_form.enable_update_status_emails=NULL \
 --account-name="${ACCOUNT_NAME}" \
 --account-mail="${ACCOUNT_MAIL}" \
 --site-mail="${SITE_MAIL}" \
---account-pass="${ACCOUNT_PASS}"
+--account-pass="${ACCOUNT_PASS}" \
 --site-name="${SITE_NAME}"
 
 # Correct permissions to avoid future issues
