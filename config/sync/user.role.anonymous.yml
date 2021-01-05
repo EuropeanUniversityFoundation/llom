@@ -10,7 +10,9 @@ weight: 0
 is_admin: false
 permissions:
   - 'access comments'
-  - 'access content'
-  - 'access site-wide contact form'
+  - 'administer contact forms'
+  - 'restful post lost_password_reset'
+  - 'restful post lost_password_resource'
+  - 'restful post user_registration'
   - 'search content'
   - 'use text format restricted_html'
