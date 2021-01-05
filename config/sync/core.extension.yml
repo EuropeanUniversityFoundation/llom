@@ -24,15 +24,22 @@ module:
   field_ui: 0
   file: 0
   filter: 0
+  flags: 0
   h5p: 0
   h5peditor: 0
+  hal: 0
   help: 0
   history: 0
   image: 0
+  jsonapi: 0
+  language: 0
+  languagefield: 0
+  languageicons: 0
   link: 0
   llom_h5p_content: 0
   llom_scoring: 0
   llom_taxonomy: 0
+  locale: 0
   menu_ui: 0
   module_filter: 0
   node: 0
@@ -46,6 +53,8 @@ module:
   redirect_after_login: 0
   registration_role: 0
   rest: 0
+  rest_password: 0
+  restui: 0
   search: 0
   serialization: 0
   shortcut: 0
@@ -57,6 +66,7 @@ module:
   tour: 0
   update: 0
   user: 0
+  view_user_email: 0
   views_ui: 0
   menu_link_content: 1
   views: 10
