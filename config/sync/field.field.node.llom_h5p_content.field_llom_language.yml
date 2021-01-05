@@ -1,0 +1,21 @@
+uuid: 821b11e4-a3f2-4b90-880d-7483347edd56
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_llom_language
+    - node.type.llom_h5p_content
+  module:
+    - languagefield
+id: node.llom_h5p_content.field_llom_language
+field_name: field_llom_language
+entity_type: node
+bundle: llom_h5p_content
+label: Language
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: language_field
