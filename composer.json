@@ -26,7 +26,7 @@
         "drupal/bootstrap": "^3.21",
         "drupal/config_installer": "1.5",
         "drupal/console": "^1.0.2",
-        "drupal/core": "~8.9.0",
+        "drupal/core": "^8.9.0",
         "drupal/h5p": "^1.0-rc17",
         "drupal/module_filter": "^3.1",
         "drupal/recaptcha": "^2.4",
@@ -42,7 +42,7 @@
     "require-dev": {
         "phpro/grumphp": "^0.16.1",
         "drupal/devel": "2.1",
-        "webflo/drupal-core-require-dev": "~8.9.0"
+        "webflo/drupal-core-require-dev": "^8.9.0"
     },
     "conflict": {
         "drupal/drupal": "*"
