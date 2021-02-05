@@ -4,6 +4,7 @@ module:
   admin_toolbar_tools: 0
   adminimal_admin_toolbar: 0
   automated_cron: 0
+  basic_auth: 0
   big_pipe: 0
   block: 0
   block_content: 0
@@ -44,7 +45,9 @@ module:
   recaptcha: 0
   redirect_after_login: 0
   registration_role: 0
+  rest: 0
   search: 0
+  serialization: 0
   shortcut: 0
   smtp: 0
   system: 0
