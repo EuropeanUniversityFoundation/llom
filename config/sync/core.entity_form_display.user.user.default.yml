@@ -37,5 +37,6 @@ content:
     region: content
 hidden:
   contact: true
+  langcode: true
   language: true
   timezone: true
