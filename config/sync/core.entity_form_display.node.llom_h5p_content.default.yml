@@ -3,12 +3,14 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.llom_h5p_content.field_language
     - field.field.node.llom_h5p_content.field_llom_assignment
     - field.field.node.llom_h5p_content.field_llom_level
     - field.field.node.llom_h5p_content.field_llom_topic
     - node.type.llom_h5p_content
   module:
     - h5peditor
+    - languagefield
 _core:
   default_config_hash: H8NJMPM6rNjr_SmLuz7dZd87OuN8Wo6slM9fyfJiXGw
 id: node.llom_h5p_content.default
@@ -18,19 +20,27 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 5
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_language:
+    weight: 4
+    settings:
+      format:
+        name: name
+    third_party_settings: {  }
+    type: languagefield_select
+    region: content
   field_llom_assignment:
-    weight: 3
+    weight: 5
     settings: {  }
     third_party_settings: {  }
     type: h5p_editor
     region: content
   field_llom_level:
     type: options_select
-    weight: 2
+    weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -40,11 +50,18 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
   status:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 6
+    weight: 8
     region: content
     third_party_settings: {  }
   title:
@@ -57,7 +74,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 4
+    weight: 6
     settings:
       match_operator: CONTAINS
       size: 60

@@ -18,4 +18,5 @@ content: {  }
 hidden:
   field_institution: true
   field_position: true
+  langcode: true
   member_for: true

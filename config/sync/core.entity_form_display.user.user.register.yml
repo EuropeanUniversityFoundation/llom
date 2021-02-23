@@ -38,5 +38,6 @@ content:
     third_party_settings: {  }
 hidden:
   contact: true
+  langcode: true
   language: true
   timezone: true
