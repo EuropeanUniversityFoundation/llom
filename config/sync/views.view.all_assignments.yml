@@ -15,6 +15,8 @@ dependencies:
   module:
     - languagefield
     - node
+    - rest
+    - serialization
     - taxonomy
     - user
 id: all_assignments
@@ -526,6 +528,7 @@ display:
             de: de
             el: el
             pl: pl
+            pt-pt: pt-pt
             es: es
           group: 1
           exposed: true
@@ -546,6 +549,7 @@ display:
               anonymous: '0'
               administrator: '0'
               academic_staff: '0'
+              student: '0'
             reduce: false
           is_grouped: false
           group_info:
@@ -632,6 +636,52 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - user
+        - 'user.node_grants:view'
+        - user.roles
+      tags:
+        - 'config:field.storage.node.field_language'
+        - 'config:field.storage.node.field_llom_level'
+        - 'config:field.storage.node.field_llom_topic'
+  rest_export_1:
+    display_plugin: rest_export
+    id: rest_export_1
+    display_title: 'REST export'
+    position: 1
+    display_options:
+      display_extenders: {  }
+      path: rest-all-assignments
+      row:
+        type: data_field
+        options:
+          field_options:
+            title:
+              alias: ''
+              raw_output: true
+            field_llom_level:
+              alias: ''
+              raw_output: false
+            field_llom_topic:
+              alias: ''
+              raw_output: false
+            field_language:
+              alias: ''
+              raw_output: true
+            uid:
+              alias: ''
+              raw_output: true
+      style:
+        type: serializer
+        options:
+          formats:
+            json: json
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - request_format
+        - url
         - user
         - 'user.node_grants:view'
         - user.roles
