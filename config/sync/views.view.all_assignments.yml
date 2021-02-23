@@ -526,6 +526,7 @@ display:
             de: de
             el: el
             pl: pl
+            pt-pt: pt-pt
             es: es
           group: 1
           exposed: true
