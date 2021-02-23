@@ -48,6 +48,7 @@ module:
   redirect_after_login: 0
   registration_role: 0
   rest: 0
+  restui: 0
   search: 0
   serialization: 0
   shortcut: 0

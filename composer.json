@@ -33,6 +33,7 @@
         "drupal/recaptcha": "^2.4",
         "drupal/redirect_after_login": "^2.6",
         "drupal/registration_role": "^1.1",
+        "drupal/restui": "^1.19",
         "drupal/smtp": "^1.0@beta",
         "drush/drush": "^9.0.0",
         "vlucas/phpdotenv": "^2.4",
