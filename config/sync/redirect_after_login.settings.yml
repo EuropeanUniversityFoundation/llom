@@ -3,4 +3,5 @@ login_redirection:
   authenticated: /
   administrator: /
   academic_staff: /
-exclude_urls: ''
+  student: /
+exclude_urls: '"*"'
