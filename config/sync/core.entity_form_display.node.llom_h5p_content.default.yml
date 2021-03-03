@@ -10,7 +10,6 @@ dependencies:
     - node.type.llom_h5p_content
   module:
     - h5peditor
-    - languagefield
 _core:
   default_config_hash: H8NJMPM6rNjr_SmLuz7dZd87OuN8Wo6slM9fyfJiXGw
 id: node.llom_h5p_content.default
@@ -27,10 +26,12 @@ content:
   field_language:
     weight: 4
     settings:
-      format:
-        name: name
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
-    type: languagefield_select
+    type: entity_reference_autocomplete
     region: content
   field_llom_assignment:
     weight: 5

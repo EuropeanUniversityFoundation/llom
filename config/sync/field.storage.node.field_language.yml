@@ -1,31 +1,17 @@
-uuid: 65610fe7-5b02-4be7-879a-fafbd06316e8
+uuid: 00262995-596e-4ed2-97af-b80632b9170d
 langcode: en
 status: true
 dependencies:
   module:
-    - languagefield
     - node
+    - taxonomy
 id: node.field_language
 field_name: field_language
 entity_type: node
-type: language_field
+type: entity_reference
 settings:
-  language_range:
-    11: '11'
-    1: 0
-    12: 0
-    2: 0
-    site_default: 0
-    und: 0
-    current_interface: 0
-    authors_default: 0
-  included_languages:
-    '': ''
-  excluded_languages: {  }
-  groups: 'fr, es, pt-pt, fi, pl, de, el'
-  maxlength: 12
-  allowed_values_function: languagefield_allowed_values
-module: languagefield
+  target_type: taxonomy_term
+module: core
 locked: false
 cardinality: 1
 translatable: true

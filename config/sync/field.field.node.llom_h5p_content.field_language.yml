@@ -1,12 +1,11 @@
-uuid: bd833035-0ccd-44af-9975-6563516ac75d
+uuid: 1f889702-d964-4c10-8230-3e0db5cdb4a7
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_language
     - node.type.llom_h5p_content
-  module:
-    - languagefield
+    - taxonomy.vocabulary.language
 id: node.llom_h5p_content.field_language
 field_name: field_language
 entity_type: node
@@ -17,5 +16,14 @@ required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings: {  }
-field_type: language_field
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      language: language
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
