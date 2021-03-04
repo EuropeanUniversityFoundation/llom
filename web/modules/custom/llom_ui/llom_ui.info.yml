@@ -1,0 +1,5 @@
+name: LLOM UI
+type: module
+core: '8.x'
+description: 'LLOM UI Module'
+package: 'LLOM'
