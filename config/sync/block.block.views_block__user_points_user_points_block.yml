@@ -1,4 +1,4 @@
-uuid: 947aa4b1-7b89-4e5d-89ec-d5b62b59dd5c
+uuid: cfdf6e7c-3b98-4d97-bd05-ecd0c7b4577d
 langcode: en
 status: true
 dependencies:
@@ -9,14 +9,14 @@ dependencies:
     - views
   theme:
     - bootstrap
-id: views_block__user_points_block_1
+id: views_block__user_points_user_points_block
 theme: bootstrap
 region: content
 weight: -7
 provider: null
-plugin: 'views_block:user_points-block_1'
+plugin: 'views_block:user_points-user_points_block'
 settings:
-  id: 'views_block:user_points-block_1'
+  id: 'views_block:user_points-user_points_block'
   label: ''
   provider: views
   label_display: '0'
