@@ -6,14 +6,15 @@ dependencies:
     - field.storage.node.field_language
     - field.storage.node.field_llom_level
     - field.storage.node.field_llom_topic
+    - field.storage.taxonomy_term.field_country_code
     - node.type.llom_h5p_content
     - system.menu.my-classroom
+    - taxonomy.vocabulary.language
     - taxonomy.vocabulary.level
     - taxonomy.vocabulary.topic
     - user.role.academic_staff
     - user.role.administrator
   module:
-    - languagefield
     - node
     - rest
     - serialization
@@ -259,73 +260,6 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
-        field_language:
-          id: field_language
-          table: node__field_language
-          field: field_language
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: Language
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: languagefield_default
-          settings:
-            link_to_entity: 0
-            format:
-              name: name
-              iso: 0
-              name_native: 0
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          plugin_id: field
         uid:
           id: uid
           table: node_field_data
@@ -390,6 +324,69 @@ display:
           field_api_classes: false
           entity_type: node
           entity_field: uid
+          plugin_id: field
+        field_language:
+          id: field_language
+          table: node__field_language
+          field: field_language
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: Language
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: false
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
           plugin_id: field
       filters:
         status:
@@ -513,34 +510,26 @@ display:
           hierarchy: false
           error_message: false
           plugin_id: taxonomy_index_tid
-        field_language_value:
-          id: field_language_value
+        field_language_target_id:
+          id: field_language_target_id
           table: node__field_language
-          field: field_language_value
+          field: field_language_target_id
           relationship: none
           group_type: group
           admin_label: ''
-          operator: in
-          value:
-            all: all
-            fi: fi
-            fr: fr
-            de: de
-            el: el
-            pl: pl
-            pt-pt: pt-pt
-            es: es
+          operator: or
+          value: {  }
           group: 1
           exposed: true
           expose:
-            operator_id: field_language_value_op
+            operator_id: field_language_target_id_op
             label: Language
             description: ''
             use_operator: false
-            operator: field_language_value_op
+            operator: field_language_target_id_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: field_language_value
+            identifier: field_language_target_id
             required: false
             remember: false
             multiple: false
@@ -563,7 +552,13 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          plugin_id: languagefield
+          reduce_duplicates: false
+          type: select
+          limit: true
+          vid: language
+          hierarchy: false
+          error_message: true
+          plugin_id: taxonomy_index_tid
       sorts:
         created:
           id: created
@@ -595,6 +590,15 @@ display:
           required: false
           entity_type: node
           entity_field: uid
+          plugin_id: standard
+        field_language:
+          id: field_language
+          table: node__field_language
+          field: field_language
+          relationship: none
+          group_type: group
+          admin_label: 'field_language: Taxonomy term'
+          required: false
           plugin_id: standard
       arguments: {  }
       display_extenders: {  }
@@ -675,6 +679,516 @@ display:
         options:
           formats:
             json: json
+      defaults:
+        relationships: false
+        filters: false
+        filter_groups: false
+        fields: false
+      filters:
+        status:
+          value: '1'
+          table: node_field_data
+          field: status
+          plugin_id: boolean
+          entity_type: node
+          entity_field: status
+          id: status
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+          group: 1
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          value:
+            llom_h5p_content: llom_h5p_content
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          expose:
+            operator_limit_selection: false
+            operator_list: {  }
+        field_llom_level_target_id:
+          id: field_llom_level_target_id
+          table: node__field_llom_level
+          field: field_llom_level_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_llom_level_target_id_op
+            label: 'Level Filter'
+            description: ''
+            use_operator: false
+            operator: field_llom_level_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_llom_level_target_id
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              academic_staff: '0'
+              student: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: textfield
+          limit: true
+          vid: level
+          hierarchy: false
+          error_message: false
+          plugin_id: taxonomy_index_tid
+        field_llom_topic_target_id:
+          id: field_llom_topic_target_id
+          table: node__field_llom_topic
+          field: field_llom_topic_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_llom_topic_target_id_op
+            label: 'Topic Filter'
+            description: ''
+            use_operator: false
+            operator: field_llom_topic_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_llom_topic_target_id
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              academic_staff: '0'
+              student: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: textfield
+          limit: true
+          vid: topic
+          hierarchy: false
+          error_message: false
+          plugin_id: taxonomy_index_tid
+        field_language_target_id:
+          id: field_language_target_id
+          table: node__field_language
+          field: field_language_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_language_target_id_op
+            label: Language
+            description: ''
+            use_operator: false
+            operator: field_language_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_language_target_id
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              academic_staff: '0'
+              student: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: textfield
+          limit: true
+          vid: language
+          hierarchy: false
+          error_message: true
+          plugin_id: taxonomy_index_tid
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      relationships:
+        uid:
+          id: uid
+          table: node_field_revision
+          field: uid
+          relationship: none
+          group_type: group
+          admin_label: User
+          required: false
+          entity_type: node
+          entity_field: uid
+          plugin_id: standard
+        field_language:
+          id: field_language
+          table: node__field_language
+          field: field_language
+          relationship: none
+          group_type: group
+          admin_label: 'field_language: Taxonomy term'
+          required: false
+          plugin_id: standard
+      fields:
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          entity_type: node
+          entity_field: title
+          alter:
+            alter_text: false
+            make_link: false
+            absolute: false
+            trim: false
+            word_boundary: false
+            ellipsis: false
+            strip_tags: false
+            html: false
+          hide_empty: false
+          empty_zero: false
+          settings:
+            link_to_entity: true
+          plugin_id: field
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: Title
+          exclude: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_llom_level:
+          id: field_llom_level
+          table: node__field_llom_level
+          field: field_llom_level
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: Level
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: false
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_llom_topic:
+          id: field_llom_topic
+          table: node__field_llom_topic
+          field: field_llom_topic
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: Topic
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: false
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        uid:
+          id: uid
+          table: node_field_data
+          field: uid
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: Author
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: false
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          entity_type: node
+          entity_field: uid
+          plugin_id: field
+        field_country_code:
+          id: field_country_code
+          table: taxonomy_term__field_country_code
+          field: field_country_code
+          relationship: field_language
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+      pager:
+        type: some
+        options:
+          items_per_page: 20
+          offset: 0
     cache_metadata:
       max-age: -1
       contexts:
@@ -686,6 +1200,6 @@ display:
         - 'user.node_grants:view'
         - user.roles
       tags:
-        - 'config:field.storage.node.field_language'
         - 'config:field.storage.node.field_llom_level'
         - 'config:field.storage.node.field_llom_topic'
+        - 'config:field.storage.taxonomy_term.field_country_code'
