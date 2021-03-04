@@ -55,7 +55,7 @@ display:
         type: basic
         options:
           submit_button: Apply
-          reset_button: false
+          reset_button: true
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
           expose_sort_order: true
@@ -134,6 +134,69 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+        field_language:
+          id: field_language
+          table: node__field_language
+          field: field_language
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: Language
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: false
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
         field_llom_level:
           id: field_llom_level
           table: node__field_llom_level
@@ -325,69 +388,6 @@ display:
           entity_type: node
           entity_field: uid
           plugin_id: field
-        field_language:
-          id: field_language
-          table: node__field_language
-          field: field_language
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: Language
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: false
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          plugin_id: field
       filters:
         status:
           value: '1'
@@ -414,6 +414,56 @@ display:
           expose:
             operator_limit_selection: false
             operator_list: {  }
+          group: 1
+        field_language_target_id:
+          id: field_language_target_id
+          table: node__field_language
+          field: field_language_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_language_target_id_op
+            label: Language
+            description: ''
+            use_operator: false
+            operator: field_language_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: language
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              academic_staff: '0'
+              student: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: select
+          limit: true
+          vid: language
+          hierarchy: false
+          error_message: true
+          plugin_id: taxonomy_index_tid
         field_llom_level_target_id:
           id: field_llom_level_target_id
           table: node__field_llom_level
@@ -433,7 +483,7 @@ display:
             operator: field_llom_level_target_id_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: field_llom_level_target_id
+            identifier: level
             required: false
             remember: false
             multiple: false
@@ -442,6 +492,7 @@ display:
               anonymous: '0'
               administrator: '0'
               academic_staff: '0'
+              student: '0'
             reduce: false
           is_grouped: false
           group_info:
@@ -481,55 +532,7 @@ display:
             operator: field_llom_topic_target_id_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: field_llom_topic_target_id
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-              academic_staff: '0'
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          reduce_duplicates: false
-          type: select
-          limit: true
-          vid: topic
-          hierarchy: false
-          error_message: false
-          plugin_id: taxonomy_index_tid
-        field_language_target_id:
-          id: field_language_target_id
-          table: node__field_language
-          field: field_language_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: or
-          value: {  }
-          group: 1
-          exposed: true
-          expose:
-            operator_id: field_language_target_id_op
-            label: Language
-            description: ''
-            use_operator: false
-            operator: field_language_target_id_op
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: field_language_target_id
+            identifier: topic
             required: false
             remember: false
             multiple: false
@@ -555,9 +558,9 @@ display:
           reduce_duplicates: false
           type: select
           limit: true
-          vid: language
+          vid: topic
           hierarchy: false
-          error_message: true
+          error_message: false
           plugin_id: taxonomy_index_tid
       sorts:
         created:
@@ -602,6 +605,10 @@ display:
           plugin_id: standard
       arguments: {  }
       display_extenders: {  }
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
     cache_metadata:
       max-age: -1
       contexts:
@@ -616,14 +623,14 @@ display:
         - 'config:field.storage.node.field_language'
         - 'config:field.storage.node.field_llom_level'
         - 'config:field.storage.node.field_llom_topic'
-  page_1:
+  assignments_page:
     display_plugin: page
-    id: page_1
+    id: assignments_page
     display_title: Page
     position: 1
     display_options:
       display_extenders: {  }
-      path: all-assignments
+      path: assignments
       menu:
         type: normal
         title: 'All Assignments'
