@@ -1,0 +1,11 @@
+uuid: e6869bcf-7636-462b-8e5b-14feb9b7ef7d
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.llom_h5p_content
+id: node.llom_h5p_content
+target_entity_type_id: node
+target_bundle: llom_h5p_content
+default_langcode: site_default
+language_alterable: false

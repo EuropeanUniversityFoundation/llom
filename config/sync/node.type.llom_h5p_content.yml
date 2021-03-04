@@ -19,4 +19,4 @@ description: 'Assignment using the H5P Rich Content Framework'
 help: 'Automated Assignment using the H5P Rich Content Framework'
 new_revision: false
 preview_mode: 0
-display_submitted: true
+display_submitted: false
