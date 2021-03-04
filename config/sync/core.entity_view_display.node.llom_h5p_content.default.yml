@@ -3,12 +3,14 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.llom_h5p_content.field_language
     - field.field.node.llom_h5p_content.field_llom_assignment
     - field.field.node.llom_h5p_content.field_llom_level
     - field.field.node.llom_h5p_content.field_llom_topic
     - node.type.llom_h5p_content
   module:
     - h5p
+    - languagefield
     - user
 _core:
   default_config_hash: X2XuIfMHecn5QKKU7L1R9q7SaA1ZvR8XixZ6aBClMaM
@@ -17,18 +19,29 @@ targetEntityType: node
 bundle: llom_h5p_content
 mode: default
 content:
+  field_language:
+    type: languagefield_default
+    weight: 1
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+      format:
+        name: name
+    third_party_settings: {  }
   field_llom_assignment:
-    weight: 101
+    weight: 2
     label: above
     settings: {  }
     third_party_settings: {  }
     type: h5p_default
     region: content
   links:
-    weight: 100
+    weight: 0
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
 hidden:
   field_llom_level: true
   field_llom_topic: true
+  langcode: true
