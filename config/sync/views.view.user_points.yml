@@ -8,6 +8,7 @@ dependencies:
     - node.type.llom_h5p_content
     - taxonomy.vocabulary.level
     - taxonomy.vocabulary.topic
+    - user.role.student
   module:
     - h5p
     - node
@@ -427,7 +428,7 @@ display:
             operator: field_llom_level_target_id_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: level
+            identifier: field_llom_level_target_id
             required: false
             remember: false
             multiple: false
@@ -436,6 +437,7 @@ display:
               anonymous: '0'
               administrator: '0'
               academic_staff: '0'
+              student: '0'
             reduce: false
           is_grouped: false
           group_info:
@@ -556,11 +558,16 @@ display:
             sort_order: asc
             number_of_records: 0
             format: default_summary
-          specify_validation: false
+          specify_validation: true
           validate:
-            type: none
+            type: 'entity:user'
             fail: 'not found'
-          validate_options: {  }
+          validate_options:
+            access: true
+            operation: update
+            multiple: 0
+            restrict_roles: false
+            roles: {  }
           break_phrase: false
           not: false
           entity_type: user
@@ -577,6 +584,81 @@ display:
         - user
         - 'user.node_grants:view'
         - user.permissions
+      tags:
+        - 'config:field.storage.node.field_llom_level'
+        - 'config:field.storage.node.field_llom_topic'
+  block_1:
+    display_plugin: block
+    id: block_1
+    display_title: Block
+    position: 1
+    display_options:
+      display_extenders: {  }
+      filters:
+        status:
+          value: '1'
+          table: node_field_data
+          field: status
+          plugin_id: boolean
+          entity_type: node
+          entity_field: status
+          id: status
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+          group: 1
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          value:
+            llom_h5p_content: llom_h5p_content
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          expose:
+            operator_limit_selection: false
+            operator_list: {  }
+      defaults:
+        filters: false
+        filter_groups: false
+        header: false
+        title: false
+        access: false
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content:
+            value: '<a href="/user/logout" class="btn btn-lg btn-primary">Continue to React App</a>'
+            format: full_html
+          plugin_id: text
+      title: ''
+      access:
+        type: role
+        options:
+          role:
+            student: student
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - 'user.node_grants:view'
+        - user.roles
       tags:
         - 'config:field.storage.node.field_llom_level'
         - 'config:field.storage.node.field_llom_topic'
@@ -940,7 +1022,16 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      path: user/%/points
+      path: user/%user/points
+      menu:
+        type: tab
+        title: 'User Points'
+        description: ''
+        expanded: false
+        parent: ''
+        weight: 5
+        context: '0'
+        menu_name: account
     cache_metadata:
       max-age: -1
       contexts:

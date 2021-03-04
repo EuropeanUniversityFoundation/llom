@@ -1,0 +1,31 @@
+uuid: 947aa4b1-7b89-4e5d-89ec-d5b62b59dd5c
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.user_points
+  module:
+    - system
+    - views
+  theme:
+    - bootstrap
+id: views_block__user_points_block_1
+theme: bootstrap
+region: content
+weight: -7
+provider: null
+plugin: 'views_block:user_points-block_1'
+settings:
+  id: 'views_block:user_points-block_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  request_path:
+    id: request_path
+    pages: '/user/*'
+    negate: false
+    context_mapping: {  }
