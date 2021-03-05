@@ -35,6 +35,7 @@ module:
   llom_h5p_content: 0
   llom_scoring: 0
   llom_taxonomy: 0
+  llom_ui: 0
   menu_ui: 0
   module_filter: 0
   node: 0
