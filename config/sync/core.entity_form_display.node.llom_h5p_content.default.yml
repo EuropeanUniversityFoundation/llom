@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.llom_h5p_content.field_language
     - field.field.node.llom_h5p_content.field_llom_assignment
     - field.field.node.llom_h5p_content.field_llom_level
     - field.field.node.llom_h5p_content.field_llom_topic
@@ -18,12 +19,18 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 5
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_language:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
   field_llom_assignment:
-    weight: 3
+    weight: 4
     settings: {  }
     third_party_settings: {  }
     type: h5p_editor
@@ -36,7 +43,7 @@ content:
     third_party_settings: {  }
   field_llom_topic:
     type: options_select
-    weight: 1
+    weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -44,7 +51,7 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 6
+    weight: 7
     region: content
     third_party_settings: {  }
   title:
@@ -57,7 +64,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 4
+    weight: 5
     settings:
       match_operator: CONTAINS
       size: 60
@@ -66,6 +73,7 @@ content:
     region: content
     third_party_settings: {  }
 hidden:
+  langcode: true
   path: true
   promote: true
   sticky: true

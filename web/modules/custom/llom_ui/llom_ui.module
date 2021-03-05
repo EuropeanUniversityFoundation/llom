@@ -1,0 +1,22 @@
+<?php
+/**
+ * @file
+ * Contains llom_ui.module.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_alter().
+ */
+function llom_ui_form_alter(&$form, &$form_state, $form_id) {
+  $current_user = \Drupal::currentUser();
+  $roles = $current_user->getRoles();
+
+  if (in_array($form_id, ['user_form',])) {
+    if(in_array('academic_staff',$roles)){
+      $form['field_institution']['widget'][0]['value']['#required']=TRUE;
+      $form['field_position']['widget'][0]['value']['#required']=TRUE;
+    }
+  }
+}

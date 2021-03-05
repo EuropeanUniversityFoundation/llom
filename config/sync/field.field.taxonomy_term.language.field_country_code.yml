@@ -1,0 +1,19 @@
+uuid: 46b5917e-a338-40d0-a8bb-f6fc2d885787
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_country_code
+    - taxonomy.vocabulary.language
+id: taxonomy_term.language.field_country_code
+field_name: field_country_code
+entity_type: taxonomy_term
+bundle: language
+label: 'Country Code'
+description: 'This code is used by the LLOM App'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

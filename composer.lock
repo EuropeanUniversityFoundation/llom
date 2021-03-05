@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "84eea769ff6aa8d0ff39e64cd2fe44c7",
+    "content-hash": "2f0602050a76915679743bd0a26faa11",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -3141,27 +3141,27 @@
             }
         },
         {
-            "name": "drupal/module_filter",
-            "version": "3.1.0",
+            "name": "drupal/languagefield",
+            "version": "1.5.0",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/module_filter.git",
-                "reference": "8.x-3.1"
+                "url": "https://git.drupalcode.org/project/languagefield.git",
+                "reference": "8.x-1.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/module_filter-8.x-3.1.zip",
-                "reference": "8.x-3.1",
-                "shasum": "39d627ce60280ae54bcf9beae217b85cce1969e4"
+                "url": "https://ftp.drupal.org/files/projects/languagefield-8.x-1.5.zip",
+                "reference": "8.x-1.5",
+                "shasum": "7729d13c2befdcbb24ccb4a3cd37ae7944174815"
             },
             "require": {
-                "drupal/core": "~8.0"
+                "drupal/core": "^8"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-3.1",
-                    "datestamp": "1507650844",
+                    "version": "8.x-1.5",
+                    "datestamp": "1552172285",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3170,7 +3170,65 @@
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
-                "GPL-2.0-or-later"
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Alan D.",
+                    "homepage": "https://www.drupal.org/user/198838",
+                    "role": "Founder"
+                },
+                {
+                    "name": "John Voskuilen",
+                    "homepage": "https://www.drupal.org/user/591042",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Deji Akala",
+                    "email": "dejiakala@gmail.com",
+                    "homepage": "https://github.com/dakala",
+                    "role": "Contributor"
+                }
+            ],
+            "description": "Creates a language field with widgets and formatters.",
+            "homepage": "http://drupal.org/project/languagefield",
+            "support": {
+                "source": "http://cgit.drupalcode.org/languagefield",
+                "issues": "http://drupal.org/project/languagefield",
+                "irc": "irc://irc.freenode.org/drupal-contribute"
+            }
+        },
+        {
+            "name": "drupal/module_filter",
+            "version": "3.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/module_filter.git",
+                "reference": "8.x-3.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/module_filter-8.x-3.2.zip",
+                "reference": "8.x-3.2",
+                "shasum": "b5c1a5141da392340232a1ad0934b921b862e1f4"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-3.2",
+                    "datestamp": "1614918371",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
             ],
             "authors": [
                 {
@@ -3183,9 +3241,10 @@
                 }
             ],
             "description": "Filter the modules list.",
-            "homepage": "https://www.drupal.org/project/module_filter",
+            "homepage": "http://drupal.org/project/module_filter",
             "support": {
-                "source": "https://git.drupalcode.org/project/module_filter"
+                "source": "https://git.drupalcode.org/project/module_filter",
+                "issues": "https://www.drupal.org/project/issues/module_filter"
             }
         },
         {
@@ -3373,6 +3432,62 @@
             "homepage": "https://www.drupal.org/project/registration_role",
             "support": {
                 "source": "https://git.drupalcode.org/project/registration_role"
+            }
+        },
+        {
+            "name": "drupal/restui",
+            "version": "1.19.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/restui.git",
+                "reference": "8.x-1.19"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/restui-8.x-1.19.zip",
+                "reference": "8.x-1.19",
+                "shasum": "71c9aef89976c273f9b9025c9b6200de8c2d226c"
+            },
+            "require": {
+                "drupal/core": "^8.7.7 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.19",
+                    "datestamp": "1606482499",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "-enzo-",
+                    "homepage": "https://www.drupal.org/user/294937"
+                },
+                {
+                    "name": "clemens.tolboom",
+                    "homepage": "https://www.drupal.org/user/125814"
+                },
+                {
+                    "name": "juampynr",
+                    "homepage": "https://www.drupal.org/user/682736"
+                },
+                {
+                    "name": "klausi",
+                    "homepage": "https://www.drupal.org/user/262198"
+                }
+            ],
+            "description": "Provides a user interface to manage REST resources.",
+            "homepage": "https://www.drupal.org/project/restui",
+            "support": {
+                "source": "https://git.drupalcode.org/project/restui"
             }
         },
         {

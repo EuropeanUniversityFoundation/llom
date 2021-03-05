@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.llom_h5p_content.field_language
     - field.field.node.llom_h5p_content.field_llom_assignment
     - field.field.node.llom_h5p_content.field_llom_level
     - field.field.node.llom_h5p_content.field_llom_topic
@@ -18,17 +19,15 @@ bundle: llom_h5p_content
 mode: default
 content:
   field_llom_assignment:
-    weight: 101
-    label: above
+    weight: 0
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: h5p_default
     region: content
-  links:
-    weight: 100
-    settings: {  }
-    third_party_settings: {  }
-    region: content
 hidden:
+  field_language: true
   field_llom_level: true
   field_llom_topic: true
+  langcode: true
+  links: true
