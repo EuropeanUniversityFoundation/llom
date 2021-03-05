@@ -10,7 +10,7 @@ field_name: field_country_code
 entity_type: taxonomy_term
 bundle: language
 label: 'Country Code'
-description: ''
+description: 'This code is used by the LLOM App'
 required: false
 translatable: false
 default_value: {  }

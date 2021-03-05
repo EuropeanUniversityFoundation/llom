@@ -15,17 +15,17 @@ content:
   description:
     label: hidden
     type: text_default
-    weight: 0
+    weight: 1
     region: content
     settings: {  }
     third_party_settings: {  }
   field_country_code:
-    weight: 1
-    label: above
+    type: string
+    weight: 0
+    region: content
+    label: inline
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
-    region: content
 hidden:
   langcode: true
