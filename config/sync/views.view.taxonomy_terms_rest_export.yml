@@ -270,9 +270,9 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.taxonomy_term.field_country_code'
-  rest_export_1:
+  language_rest_export:
     display_plugin: rest_export
-    id: rest_export_1
+    id: language_rest_export
     display_title: 'REST export'
     position: 1
     display_options:
@@ -367,9 +367,9 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.taxonomy_term.field_country_code'
-  rest_export_2:
+  topic_rest_export:
     display_plugin: rest_export
-    id: rest_export_2
+    id: topic_rest_export
     display_title: 'REST export'
     position: 1
     display_options:
