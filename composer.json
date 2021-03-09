@@ -29,6 +29,7 @@
         "drupal/core": "^8.9.0",
         "drupal/h5p": "^1.0-rc17",
         "drupal/languagefield": "^1.5",
+        "drupal/material_icons": "^1.0",
         "drupal/module_filter": "^3.1",
         "drupal/recaptcha": "^2.4",
         "drupal/redirect_after_login": "^2.6",
