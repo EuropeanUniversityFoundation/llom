@@ -33,6 +33,7 @@ module:
   languagefield: 0
   link: 0
   llom_h5p_content: 0
+  llom_redirect: 0
   llom_scoring: 0
   llom_taxonomy: 0
   llom_ui: 0
