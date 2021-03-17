@@ -1070,6 +1070,7 @@ display:
         use_more: false
         use_more_always: false
         use_more_text: false
+        relationships: false
       filter_groups:
         operator: AND
         groups:
@@ -1097,6 +1098,25 @@ display:
       use_more: true
       use_more_always: true
       use_more_text: 'See more'
+      relationships:
+        field_llom_assignment_h5p_content_id:
+          id: field_llom_assignment_h5p_content_id
+          table: node__field_llom_assignment
+          field: field_llom_assignment_h5p_content_id
+          relationship: none
+          group_type: group
+          admin_label: 'H5P Content'
+          required: false
+          plugin_id: standard
+        uid:
+          id: uid
+          table: h5p_points
+          field: uid
+          relationship: field_llom_assignment_h5p_content_id
+          group_type: group
+          admin_label: 'H5P user points'
+          required: false
+          plugin_id: standard
     cache_metadata:
       max-age: -1
       contexts:
@@ -1260,11 +1280,11 @@ display:
           entity_type: node
           entity_field: title
           plugin_id: field
-        field_language:
-          id: field_language
-          table: node__field_language
-          field: field_language
-          relationship: none
+        field_country_code:
+          id: field_country_code
+          table: taxonomy_term__field_country_code
+          field: field_country_code
+          relationship: field_language
           group_type: group
           admin_label: ''
           label: ''
@@ -1308,11 +1328,11 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
+          click_sort_column: value
+          type: string
           settings:
-            link: false
-          group_column: target_id
+            link_to_entity: false
+          group_column: value
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -1593,6 +1613,15 @@ display:
           admin_label: 'field_llom_topic: Taxonomy term'
           required: false
           plugin_id: standard
+        field_language:
+          id: field_language
+          table: node__field_language
+          field: field_language
+          relationship: none
+          group_type: group
+          admin_label: 'field_language: Taxonomy term'
+          required: false
+          plugin_id: standard
     cache_metadata:
       max-age: -1
       contexts:
@@ -1604,6 +1633,6 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.field_language'
         - 'config:field.storage.node.field_llom_level'
+        - 'config:field.storage.taxonomy_term.field_country_code'
         - 'config:field.storage.taxonomy_term.field_topic_icon'
