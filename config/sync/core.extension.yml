@@ -36,6 +36,7 @@ module:
   llom_scoring: 0
   llom_taxonomy: 0
   llom_ui: 0
+  material_icons: 0
   menu_ui: 0
   module_filter: 0
   node: 0

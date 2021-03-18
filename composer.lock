@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2f0602050a76915679743bd0a26faa11",
+    "content-hash": "4124b3b01000612c8477176da1285be4",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -3196,6 +3196,50 @@
                 "source": "http://cgit.drupalcode.org/languagefield",
                 "issues": "http://drupal.org/project/languagefield",
                 "irc": "irc://irc.freenode.org/drupal-contribute"
+            }
+        },
+        {
+            "name": "drupal/material_icons",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/material_icons.git",
+                "reference": "1.0.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/material_icons-1.0.0.zip",
+                "reference": "1.0.0",
+                "shasum": "039cf2c2173e74e26c9bc157c506147a11c0c236"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.0.0",
+                    "datestamp": "1607455987",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "b_sharpe",
+                    "homepage": "https://www.drupal.org/user/2512258"
+                }
+            ],
+            "description": "Material Icons support for fields and WYSIWYG",
+            "homepage": "https://www.drupal.org/project/material_icons",
+            "support": {
+                "source": "https://git.drupalcode.org/project/material_icons"
             }
         },
         {
