@@ -1,0 +1,10 @@
+uuid: 3a884fb6-d6a7-4b99-887e-c716511c188e
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.standalone_assignment
+label: 'Standalone Assignment'
+targetEntityType: node
+cache: true
