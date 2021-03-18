@@ -7,7 +7,7 @@ use Drupal\node\NodeInterface;
 /**
  * Raw assignment controller.
  */
-class MyController extends ControllerBase  { 
+class EmbedController extends ControllerBase  { 
     public function assignmentRaw(NodeInterface $node) {
   $page = [
     // Note - the view mode here is `standalone_assignment` 

@@ -1,7 +1,7 @@
 llom_embed.assignment_raw:
   path: '/node/{node}/assignment'
   defaults:
-    _controller: '\Drupal\llom_embed\Controller\MyController::assignmentRaw'
+    _controller: '\Drupal\llom_embed\Controller\EmbedController::assignmentRaw'
   requirements:
     _permission: 'access content'
     node: \d+
