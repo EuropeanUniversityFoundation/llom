@@ -576,9 +576,15 @@ display:
         use_more: false
         use_more_always: false
         use_more_text: false
+        access: false
       use_more: true
       use_more_always: true
       use_more_text: 'See more'
+      access:
+        type: role
+        options:
+          role:
+            academic_staff: academic_staff
     cache_metadata:
       max-age: -1
       contexts:
