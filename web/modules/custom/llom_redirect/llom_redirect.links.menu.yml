@@ -1,0 +1,4 @@
+llom_redirect.my_group_menu:
+    parent: system.admin_config_system
+    route_name: llom_redirect.settings
+    title: "LLOM Redirect on Logout"
