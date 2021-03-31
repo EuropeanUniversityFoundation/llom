@@ -1,0 +1,24 @@
+<?php
+/**
+ * Implements hook_theme().
+ */
+function llom_embed_theme($existing,$type,$theme,$path){
+  return[
+    'page__assignment_raw'=>[
+    'variables'=>[],
+    ],
+  ];
+}
+/**
+ * Implements hook_theme_suggestions_page().
+ */
+function llom_embed_theme_suggestions_page(array $variables) {
+  
+  $suggestions = [];
+  $route_name = \Drupal::routeMatch()->getRouteName();
+  if ($route_name == 'llom_embed.assignment_raw') {
+    $suggestions[] = 'page__assignment_raw';
+  }
+  
+  return $suggestions;
+}

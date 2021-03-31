@@ -3,6 +3,7 @@ module:
   admin_toolbar_links_access_filter: 0
   admin_toolbar_tools: 0
   adminimal_admin_toolbar: 0
+  allow_iframed_site: 0
   automated_cron: 0
   basic_auth: 0
   big_pipe: 0
@@ -32,6 +33,7 @@ module:
   language: 0
   languagefield: 0
   link: 0
+  llom_embed: 0
   llom_h5p_content: 0
   llom_redirect: 0
   llom_scoring: 0
