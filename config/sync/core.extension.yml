@@ -1,6 +1,7 @@
 module:
   admin_toolbar: 0
   admin_toolbar_links_access_filter: 0
+  admin_toolbar_search: 0
   admin_toolbar_tools: 0
   adminimal_admin_toolbar: 0
   allow_iframed_site: 0
@@ -50,7 +51,6 @@ module:
   quickedit: 0
   rdf: 0
   recaptcha: 0
-  redirect_after_login: 0
   registration_role: 0
   rest: 0
   restui: 0
