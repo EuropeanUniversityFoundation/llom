@@ -1,0 +1,7 @@
+llom_redirect.settings:
+  path: '/admin/config/llom_redirect/settings'
+  defaults:
+    _form: '\Drupal\llom_redirect\Form\SettingsForm'
+    _title: 'LLOM Logout Redirect to React App'
+  requirements:
+    _permission: 'administer site configuration'
