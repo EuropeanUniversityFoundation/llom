@@ -19,29 +19,18 @@ class CustomUserLogoutController extends ControllerBase {
    *   A redirection to home page.
    */
   public function logout() {
-    
-      $logout_url = '/';
-      $current_user = \Drupal::currentUser();
-      $roles = $current_user->getRoles();
-      $config = \Drupal::config('llom_redirect.settings');
-        
+
+    $logout_url = '/';
+    $current_user = \Drupal::currentUser();
+    $roles = $current_user->getRoles();
+    $config = \Drupal::config('llom_redirect.settings');
 
     if(in_array('student',$roles)){
       $logout_url = $config->get('redirect_url');
-
     }
-  
 
-
-  
-  user_logout();
-  return new TrustedRedirectResponse($logout_url);
-    
-    
-    
-    
-
-    
+    user_logout();
+    return new TrustedRedirectResponse($logout_url);
   }
 
 }
