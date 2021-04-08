@@ -44,7 +44,6 @@
         "zaporylie/composer-drupal-optimizations": "^1.0"
     },
     "require-dev": {
-        "phpro/grumphp": "^0.16.1",
         "drupal/devel": "2.1",
         "webflo/drupal-core-require-dev": "^8.9.0"
     },
