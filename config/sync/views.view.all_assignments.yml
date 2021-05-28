@@ -1265,6 +1265,7 @@ display:
         options:
           items_per_page: 20
           offset: 0
+      auth: {  }
     cache_metadata:
       max-age: -1
       contexts:
