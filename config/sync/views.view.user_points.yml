@@ -6,6 +6,8 @@ dependencies:
     - field.storage.node.field_language
     - field.storage.node.field_llom_level
     - field.storage.node.field_llom_topic
+    - field.storage.taxonomy_term.field_country_code
+    - field.storage.taxonomy_term.field_topic_icon
     - node.type.llom_h5p_content
     - taxonomy.vocabulary.language
     - taxonomy.vocabulary.level
@@ -13,6 +15,7 @@ dependencies:
     - user.role.student
   module:
     - h5p
+    - material_icons
     - node
     - rest
     - serialization
@@ -37,7 +40,7 @@ display:
         options:
           perm: 'access content'
       cache:
-        type: tag
+        type: none
         options: {  }
       query:
         type: views_query
@@ -720,6 +723,11 @@ display:
           admin_label: 'H5P user points'
           required: false
           plugin_id: standard
+        field_llom_topic:
+          id: field_llom_topic
+          table: node__field_llom_topic
+          field: field_llom_topic
+          plugin_id: standard
       arguments:
         uid:
           id: uid
@@ -768,6 +776,7 @@ display:
         operator: AND
         groups:
           1: AND
+      group_by: false
     cache_metadata:
       max-age: -1
       contexts:
@@ -782,6 +791,243 @@ display:
         - 'config:field.storage.node.field_language'
         - 'config:field.storage.node.field_llom_level'
         - 'config:field.storage.node.field_llom_topic'
+  rest_export_user_languages:
+    display_plugin: rest_export
+    id: rest_export_user_languages
+    display_title: 'REST export'
+    position: 1
+    display_options:
+      display_extenders: {  }
+      path: rest-user/%/languages
+      row:
+        type: data_field
+        options:
+          field_options:
+            title:
+              alias: ''
+              raw_output: true
+            field_llom_topic:
+              alias: ''
+              raw_output: false
+            field_llom_level:
+              alias: ''
+              raw_output: false
+            points:
+              alias: ''
+              raw_output: true
+            max_points:
+              alias: ''
+              raw_output: true
+      style:
+        type: serializer
+        options:
+          formats:
+            json: json
+      fields:
+        field_country_code:
+          id: field_country_code
+          table: taxonomy_term__field_country_code
+          field: field_country_code
+          relationship: field_language
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: entity_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_language:
+          id: field_language
+          table: node__field_language
+          field: field_language
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: false
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+      defaults:
+        fields: false
+        relationships: false
+        group_by: false
+        filters: false
+        filter_groups: false
+      relationships:
+        field_llom_assignment_h5p_content_id:
+          id: field_llom_assignment_h5p_content_id
+          table: node__field_llom_assignment
+          field: field_llom_assignment_h5p_content_id
+          relationship: none
+          group_type: group
+          admin_label: 'H5P Content'
+          required: false
+          plugin_id: standard
+        uid:
+          id: uid
+          table: h5p_points
+          field: uid
+          relationship: field_llom_assignment_h5p_content_id
+          group_type: group
+          admin_label: 'H5P user points'
+          required: false
+          plugin_id: standard
+        field_language:
+          id: field_language
+          table: node__field_language
+          field: field_language
+          relationship: none
+          group_type: group
+          admin_label: 'field_language: Taxonomy term'
+          required: false
+          plugin_id: standard
+      group_by: true
+      filters:
+        status:
+          value: '1'
+          table: node_field_data
+          field: status
+          plugin_id: boolean
+          entity_type: node
+          entity_field: status
+          id: status
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+          group: 1
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          value:
+            llom_h5p_content: llom_h5p_content
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          expose:
+            operator_limit_selection: false
+            operator_list: {  }
+          group: 1
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - request_format
+        - url
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:field.storage.node.field_language'
+        - 'config:field.storage.taxonomy_term.field_country_code'
   user_points_block:
     display_plugin: block
     id: user_points_block
@@ -824,6 +1070,7 @@ display:
         use_more: false
         use_more_always: false
         use_more_text: false
+        relationships: false
       filter_groups:
         operator: AND
         groups:
@@ -851,6 +1098,25 @@ display:
       use_more: true
       use_more_always: true
       use_more_text: 'See more'
+      relationships:
+        field_llom_assignment_h5p_content_id:
+          id: field_llom_assignment_h5p_content_id
+          table: node__field_llom_assignment
+          field: field_llom_assignment_h5p_content_id
+          relationship: none
+          group_type: group
+          admin_label: 'H5P Content'
+          required: false
+          plugin_id: standard
+        uid:
+          id: uid
+          table: h5p_points
+          field: uid
+          relationship: field_llom_assignment_h5p_content_id
+          group_type: group
+          admin_label: 'H5P user points'
+          required: false
+          plugin_id: standard
     cache_metadata:
       max-age: -1
       contexts:
@@ -881,6 +1147,27 @@ display:
         weight: 5
         context: '0'
         menu_name: account
+      relationships:
+        field_llom_assignment_h5p_content_id:
+          id: field_llom_assignment_h5p_content_id
+          table: node__field_llom_assignment
+          field: field_llom_assignment_h5p_content_id
+          relationship: none
+          group_type: group
+          admin_label: 'H5P Content'
+          required: false
+          plugin_id: standard
+        uid:
+          id: uid
+          table: h5p_points
+          field: uid
+          relationship: field_llom_assignment_h5p_content_id
+          group_type: group
+          admin_label: 'H5P user points'
+          required: false
+          plugin_id: standard
+      defaults:
+        relationships: false
     cache_metadata:
       max-age: -1
       contexts:
@@ -993,14 +1280,14 @@ display:
           entity_type: node
           entity_field: title
           plugin_id: field
-        field_llom_topic:
-          id: field_llom_topic
-          table: node__field_llom_topic
-          field: field_llom_topic
-          relationship: none
+        field_country_code:
+          id: field_country_code
+          table: taxonomy_term__field_country_code
+          field: field_country_code
+          relationship: field_language
           group_type: group
           admin_label: ''
-          label: Topic
+          label: ''
           exclude: false
           alter:
             alter_text: false
@@ -1033,7 +1320,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -1041,11 +1328,11 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
+          click_sort_column: value
+          type: string
           settings:
-            link: false
-          group_column: target_id
+            link_to_entity: false
+          group_column: value
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -1109,6 +1396,68 @@ display:
           settings:
             link: false
           group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_topic_icon:
+          id: field_topic_icon
+          table: taxonomy_term__field_topic_icon
+          field: field_topic_icon
+          relationship: field_llom_topic
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: true
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: true
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: classes
+          type: material_icons
+          settings: {  }
+          group_column: ''
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -1233,8 +1582,98 @@ display:
           prefix: ''
           suffix: ''
           plugin_id: numeric
+        finished:
+          id: finished
+          table: h5p_points
+          field: finished
+          relationship: field_llom_assignment_h5p_content_id
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          date_format: fallback
+          custom_date_format: ''
+          timezone: ''
+          plugin_id: date
       defaults:
         fields: false
+        relationships: false
+      relationships:
+        field_llom_assignment_h5p_content_id:
+          id: field_llom_assignment_h5p_content_id
+          table: node__field_llom_assignment
+          field: field_llom_assignment_h5p_content_id
+          relationship: none
+          group_type: group
+          admin_label: 'H5P Content'
+          required: false
+          plugin_id: standard
+        uid:
+          id: uid
+          table: h5p_points
+          field: uid
+          relationship: field_llom_assignment_h5p_content_id
+          group_type: group
+          admin_label: 'H5P user points'
+          required: false
+          plugin_id: standard
+        field_llom_topic:
+          id: field_llom_topic
+          table: node__field_llom_topic
+          field: field_llom_topic
+          relationship: none
+          group_type: group
+          admin_label: 'field_llom_topic: Taxonomy term'
+          required: false
+          plugin_id: standard
+        field_language:
+          id: field_language
+          table: node__field_language
+          field: field_language
+          relationship: none
+          group_type: group
+          admin_label: 'field_language: Taxonomy term'
+          required: false
+          plugin_id: standard
     cache_metadata:
       max-age: -1
       contexts:
@@ -1247,4 +1686,5 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.node.field_llom_level'
-        - 'config:field.storage.node.field_llom_topic'
+        - 'config:field.storage.taxonomy_term.field_country_code'
+        - 'config:field.storage.taxonomy_term.field_topic_icon'

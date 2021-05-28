@@ -1,0 +1,5 @@
+services:
+  llom_redirect.route_subscriber:
+    class: Drupal\llom_redirect\EventSubscriber\CustomRouteSubscriber
+    tags:
+      - { name: event_subscriber }

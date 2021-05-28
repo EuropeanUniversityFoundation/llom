@@ -1,0 +1,5 @@
+name: LLOM Logout Redirect
+type: module
+core: '8.x'
+description: 'LLOM Redirect user per role on logout'
+package: 'LLOM'

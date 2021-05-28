@@ -1,0 +1,31 @@
+uuid: 7f99c21d-6662-4d42-a8f7-877dc3b3de25
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.topic.field_topic_icon
+    - taxonomy.vocabulary.topic
+  module:
+    - material_icons
+    - text
+id: taxonomy_term.topic.default
+targetEntityType: taxonomy_term
+bundle: topic
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_topic_icon:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: material_icons
+    region: content
+hidden:
+  langcode: true

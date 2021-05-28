@@ -1,0 +1,21 @@
+uuid: be5f8a94-50d9-4550-8fdb-7030b89acdbc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_topic_icon
+    - taxonomy.vocabulary.topic
+  module:
+    - material_icons
+id: taxonomy_term.topic.field_topic_icon
+field_name: field_topic_icon
+entity_type: taxonomy_term
+bundle: topic
+label: 'Topic Icon'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: material_icons

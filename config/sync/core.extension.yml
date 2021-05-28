@@ -1,8 +1,10 @@
 module:
   admin_toolbar: 0
   admin_toolbar_links_access_filter: 0
+  admin_toolbar_search: 0
   admin_toolbar_tools: 0
   adminimal_admin_toolbar: 0
+  allow_iframed_site: 0
   automated_cron: 0
   basic_auth: 0
   big_pipe: 0
@@ -32,10 +34,13 @@ module:
   language: 0
   languagefield: 0
   link: 0
+  llom_embed: 0
   llom_h5p_content: 0
+  llom_redirect: 0
   llom_scoring: 0
   llom_taxonomy: 0
   llom_ui: 0
+  material_icons: 0
   menu_ui: 0
   module_filter: 0
   node: 0
@@ -46,7 +51,6 @@ module:
   quickedit: 0
   rdf: 0
   recaptcha: 0
-  redirect_after_login: 0
   registration_role: 0
   rest: 0
   restui: 0

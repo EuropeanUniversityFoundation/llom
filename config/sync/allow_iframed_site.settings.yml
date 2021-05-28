@@ -1,0 +1,4 @@
+request_path:
+  id: request_path
+  pages: '/node/*/assignment'
+  negate: 0
