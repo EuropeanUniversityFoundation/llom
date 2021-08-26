@@ -23,12 +23,20 @@ else
 fi
 
 # Check for .yml files in the config/sync directory
-YML="core.extension.yml"
-if [[ -f $PWD/config/sync/${YML} ]]; then
-  echo -e ">> Configuration found: "$PWD/config/sync/${YML}
-  source ${ENV}
+EXTENSION_YML="config/sync/core.extension.yml"
+if [[ -f $PWD/${EXTENSION_YML} ]]; then
+  echo -e ">> Configuration found: "$PWD/${EXTENSION_YML}
 else
   echo -e ">> Configuration is missing! Exiting..."
+  exit 1
+fi
+
+# Check for existing local settings file in web/sites/default
+SETTINGS_LOCAL="web/sites/default/settings.local.php"
+if [[ -f $PWD/${SETTINGS_LOCAL} ]]; then
+  echo -e ">> settings.local.php found: "$PWD/${SETTINGS_LOCAL}
+else
+  echo -e ">> settings.local.php is missing! Run composer install and try again"
   exit 1
 fi
 
@@ -64,12 +72,14 @@ while true; do
 done
 
 # Change the configuration files to allow the config install
-OLDMODULE=${PROFILE}": 1000"
-NEWMODULE="minimal: 1000"
-sed -i "s/${OLDMODULE}/${NEWMODULE}/g" $PWD/config/sync/${YML}
-OLDPROFILE="profile: "${PROFILE}
-NEWPROFILE="profile: minimal"
-sed -i "s/${OLDPROFILE}/${NEWPROFILE}/g" $PWD/config/sync/${YML}
+if [[ ${PROFILE} != "minimal" ]]; then
+  OLDMODULE=${PROFILE}": 1000"
+  NEWMODULE="minimal: 1000"
+  sed -i "s/${OLDMODULE}/${NEWMODULE}/g" $PWD/${EXTENSION_YML}
+  OLDPROFILE="profile: "${PROFILE}
+  NEWPROFILE="profile: minimal"
+  sed -i "s/${OLDPROFILE}/${NEWPROFILE}/g" $PWD/${EXTENSION_YML}
+fi
 
 # Perform the site install
 ${DRUSH} site-install minimal --existing-config \
@@ -79,16 +89,16 @@ install_configure_form.enable_update_status_emails=NULL \
 --account-name="${ACCOUNT_NAME}" \
 --account-mail="${ACCOUNT_MAIL}" \
 --site-mail="${SITE_MAIL}" \
---account-pass="${ACCOUNT_PASS}"
+--account-pass="${ACCOUNT_PASS}" \
 --site-name="${SITE_NAME}"
 
 # Correct permissions to avoid future issues
 echo -e "\nCorrecting permissions..."
-chmod u+w $PWD/web/sites/default
+chmod 0755 $PWD/web/sites/default
 echo -e "Added write permission to web/sites/default"
-chmod u+w $PWD/web/sites/default/settings.php
+chmod 0644 $PWD/web/sites/default/settings.php
 echo -e "Added write permission to web/sites/default/settings.php"
-chmod u+w $PWD/web/sites/default/settings.local.php
+chmod 0644 $PWD/web/sites/default/settings.local.php
 echo -e "Added write permission to web/sites/default/settings.local.php"
 
 echo -e "\nFind the site at http://${PROJECT_BASE_URL}:${HTTP_PORT}"

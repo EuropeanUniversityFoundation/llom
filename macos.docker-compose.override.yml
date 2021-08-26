@@ -1,0 +1,23 @@
+version: "3.7"
+
+##Enable mutagen to boost docker performance, check docs/DockerMacOS.md for information
+services:
+  mutagen:
+    build:
+      context: .
+      dockerfile: mutagen/Dockerfile
+    init: true
+    container_name: "mutagen"
+    volumes:
+      - mutagen:/var/www/html
+
+  nginx:
+    volumes:
+      - mutagen:/var/www/html
+
+  php:
+    volumes:
+      - mutagen:/var/www/html
+
+volumes:
+  mutagen:

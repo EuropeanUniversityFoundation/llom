@@ -6,7 +6,7 @@ echo -e "\nInstall Drupal from environment variables."
 # Check for a local drush binary
 DRUSH="vendor/bin/drush"
 if [[ -f $PWD/${DRUSH} ]]; then
-  echo -e ">> Drush found:  "$PWD/${DRUSH}
+  echo -e ">> Drush found:              "$PWD/${DRUSH}
 else
   echo -e ">> Drush is missing! Exiting..."
   exit 1
@@ -15,10 +15,19 @@ fi
 # Check for .env in the current directory
 ENV=".env"
 if [[ -f $PWD/${ENV} ]]; then
-  echo -e ">> .env found:   "$PWD/${ENV}
+  echo -e ">> .env found:               "$PWD/${ENV}
   source ${ENV}
 else
   echo -e ">> .env is missing! Exiting..."
+  exit 1
+fi
+
+# Check for existing local settings file in web/sites/default
+SETTINGS_LOCAL="web/sites/default/settings.local.php"
+if [[ -f $PWD/${SETTINGS_LOCAL} ]]; then
+  echo -e ">> settings.local.php found: "$PWD/${SETTINGS_LOCAL}
+else
+  echo -e ">> settings.local.php is missing! Run composer install and try again"
   exit 1
 fi
 

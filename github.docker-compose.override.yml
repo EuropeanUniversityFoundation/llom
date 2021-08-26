@@ -7,3 +7,6 @@ services:
   php:
     environment:
       COMPOSER_AUTH: '{"github-oauth": {"github.com": "${COMPOSER_AUTH}"}}'
+    volumes:
+    - ~/.gitconfig:/home/wodby/.gitconfig
+    - ~/.ssh/id_rsa:/home/wodby/.ssh/id_rsa
