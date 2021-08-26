@@ -19,7 +19,6 @@
     "require": {
         "composer/installers": "^1.2",
         "cweagans/composer-patches": "^1.6.5",
-        "drupal-composer/drupal-scaffold": "^2.5",
         "drupal/admin_toolbar": "^2.0",
         "drupal/adminimal_admin_toolbar": "^1.10",
         "drupal/adminimal_theme": "^1.6",
@@ -27,7 +26,8 @@
         "drupal/bootstrap": "^3.21",
         "drupal/config_installer": "1.5",
         "drupal/console": "^1.0.2",
-        "drupal/core": "^8.9.0",
+        "drupal/core-composer-scaffold": "^8.9.0",
+        "drupal/core-recommended": "^8.9.0",
         "drupal/h5p": "^1.0-rc17",
         "drupal/languagefield": "^1.5",
         "drupal/material_icons": "^1.0",
@@ -38,14 +38,15 @@
         "drupal/restui": "^1.19",
         "drupal/smtp": "^1.0@beta",
         "drush/drush": "^9.0.0",
+        "oomphinc/composer-installers-extender": "^2.0",
         "vlucas/phpdotenv": "^2.4",
         "webflo/drupal-finder": "^1.0.0",
         "webmozart/path-util": "^2.3",
         "zaporylie/composer-drupal-optimizations": "^1.0"
     },
     "require-dev": {
-        "drupal/devel": "2.1",
-        "webflo/drupal-core-require-dev": "^8.9.0"
+        "drupal/core-dev": "^8.9.0",
+        "drupal/devel": "2.1"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -89,14 +90,13 @@
             "drush/Commands/{$name}": ["type:drupal-drush"]
         },
         "patches": {
-          "drupal/h5p": {
-            "Code assumes score is int, not stored in case of double": "https://www.drupal.org/files/issues/2019-10-09/3086807_1.patch"
-          }
+            "drupal/h5p": {
+                "Code assumes score is int, not stored in case of double": "https://www.drupal.org/files/issues/2019-10-09/3086807_1.patch"
+            }
         },
         "drupal-scaffold": {
-            "initial": {
-                ".editorconfig": "../.editorconfig",
-                ".gitattributes": "../.gitattributes"
+            "locations": {
+                "web-root": "web/"
             }
         }
     }
