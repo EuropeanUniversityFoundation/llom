@@ -10,9 +10,9 @@ parameters:
     # Specify allowed request methods, specify ['*'] to allow all possible ones.
     allowedMethods: ['*']
     # Configure requests allowed from specific origins.
-    allowedOrigins: ['https://llom.uni-foundation.eu']
+    allowedOrigins: ['https://llom.eu']
     # Sets the Access-Control-Expose-Headers header.
-    exposedHeaders: true
+    exposedHeaders: false
     # Sets the Access-Control-Max-Age header.
     maxAge: false
     # Sets the Access-Control-Allow-Credentials header.
