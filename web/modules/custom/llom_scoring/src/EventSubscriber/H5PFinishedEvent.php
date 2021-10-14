@@ -46,7 +46,7 @@ class H5PFinishedEvent implements EventSubscriberInterface{
 
   public function onH5PFinished(FinishedEvent $event){
     $quizData = $event->getQuizFields();
-    dsm($quizData);
+    /*dsm($quizData);*/
 
     //get parent node for Quiz Content
     $query = $this->entityTypeManager->getStorage('node')->getQuery();
