@@ -1,5 +1,5 @@
 name: 'LLOM Taxonomy Vocabulary'
 type: module
 description: 'LLOM Taxonomy Vocabulary'
-core: 8.x
+core_version_requirement: ^8 || ^9
 package: 'LLOM'
