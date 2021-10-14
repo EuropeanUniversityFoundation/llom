@@ -1,5 +1,5 @@
 name: LLOM Embed Assignment
 type: module
-core: '8.x'
+core_version_requirement: ^8 || ^9
 description: 'Module to Embed Single Assignment for React App'
 package: 'LLOM'
