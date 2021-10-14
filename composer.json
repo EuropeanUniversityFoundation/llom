@@ -12,22 +12,35 @@
     ],
     "repositories": [
         {
+            "type": "package",
+            "package": {
+                "name": "drupal/h5p",
+                "type": "drupal-module",
+                "version": "dev-8.x-1.x",
+                "source": {
+                    "type": "git",
+                    "url": "https://git.drupalcode.org/project/h5p.git",
+                    "reference": "471d2b95f73f93e24866892d31a6ea1e30afd3f3"
+                }
+            }
+        },
+        {
             "type": "composer",
-            "url": "https://packages.drupal.org/8"
+            "url": "https://packages.drupal.org/8",
+            "exclude": ["drupal/h5p"]
         }
     ],
     "require": {
-        "composer/installers": "^1.2",
+        "composer/installers": "^1.9",
         "cweagans/composer-patches": "^1.6.5",
         "drupal/admin_toolbar": "^3.0",
         "drupal/adminimal_admin_toolbar": "^1.10",
         "drupal/adminimal_theme": "^1.6",
         "drupal/allow_iframed_site": "^3.0",
         "drupal/bootstrap": "^3.21",
-        "drupal/console": "^1.0.2",
-        "drupal/core-composer-scaffold": "^8.9.0",
-        "drupal/core-recommended": "^8.9.0",
-        "drupal/h5p": "^1.0-rc17",
+        "drupal/core-composer-scaffold": "^9.2",
+        "drupal/core-recommended": "^9.2",
+        "drupal/h5p": "dev-8.x-1.x",
         "drupal/languagefield": "^1.5",
         "drupal/material_icons": "^1.0",
         "drupal/module_filter": "^3.1",
@@ -45,8 +58,8 @@
         "zaporylie/composer-drupal-optimizations": "^1.0"
     },
     "require-dev": {
-        "drupal/core-dev": "^8.9.0",
-        "drupal/devel": "2.1"
+        "drupal/core-dev": "^9.2",
+        "drupal/devel": "^4.1"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -91,7 +104,8 @@
         },
         "patches": {
             "drupal/h5p": {
-                "Code assumes score is int, not stored in case of double": "https://www.drupal.org/files/issues/2019-10-09/3086807_1.patch"
+                "Code assumes score is int, not stored in case of double": "https://www.drupal.org/files/issues/2019-10-09/3086807_1.patch",
+                "Drupal 9 compatibility": "https://www.drupal.org/files/issues/2020-04-19/d9-compatibility-3129142-3.patch"
             }
         },
         "drupal-scaffold": {
