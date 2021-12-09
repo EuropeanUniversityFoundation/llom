@@ -5,7 +5,7 @@ _core:
 favicon:
   mimetype: image/vnd.microsoft.icon
   path: ''
-  url: ''
+  url: 'https://cms.llom.eu/themes/contrib/bootstrap/favicon.ico'
   use_default: true
 features:
   comment_user_picture: true
@@ -13,6 +13,14 @@ features:
   favicon: true
   node_user_picture: true
 logo:
-  path: ''
+  path: 'public://LLOM_logo_32_alpha.png'
   url: ''
-  use_default: true
+  use_default: false
+table_responsive: '-1'
+cdn_theme: bootstrap
+cdn_cache_ttl_versions: '604800'
+cdn_cache_ttl_themes: '604800'
+cdn_cache_ttl_assets: '0'
+cdn_cache_ttl_library: '0'
+reset_http_request_cache: ''
+table: ''
