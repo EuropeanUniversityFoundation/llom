@@ -18,17 +18,17 @@ plugin: 'system_menu_block:my-classroom'
 settings:
   id: 'system_menu_block:my-classroom'
   label: 'My LLOM'
-  provider: system
   label_display: visible
+  provider: system
   level: 1
   depth: 0
   expand_all_items: false
 visibility:
   user_role:
     id: user_role
-    roles:
-      administrator: administrator
-      academic_staff: academic_staff
     negate: false
     context_mapping:
       user: '@user.current_user_context:current_user'
+    roles:
+      administrator: administrator
+      academic_staff: academic_staff

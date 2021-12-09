@@ -1,5 +1,3 @@
-schemas:
-  bootstrap: 8000
 _core:
   default_config_hash: 1uFogeFphl0Hg6oVCacZZ8mM_0wMZ7PS_RrmLbK5tf0
 favicon:
@@ -16,6 +14,8 @@ logo:
   path: 'public://LLOM_logo_32_alpha.png'
   url: ''
   use_default: false
+schemas:
+  bootstrap: 8000
 table_responsive: '-1'
 cdn_theme: bootstrap
 cdn_cache_ttl_versions: '604800'

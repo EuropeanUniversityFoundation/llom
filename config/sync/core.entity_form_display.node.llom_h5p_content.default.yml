@@ -24,17 +24,17 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_language:
-    weight: 1
-    settings: {  }
-    third_party_settings: {  }
     type: options_select
+    weight: 1
     region: content
-  field_llom_assignment:
-    weight: 4
     settings: {  }
     third_party_settings: {  }
+  field_llom_assignment:
     type: h5p_editor
+    weight: 4
     region: content
+    settings: {  }
+    third_party_settings: {  }
   field_llom_level:
     type: options_select
     weight: 2
@@ -49,10 +49,10 @@ content:
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    settings:
-      display_label: true
     weight: 7
     region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   title:
     type: string_textfield
@@ -65,12 +65,12 @@ content:
   uid:
     type: entity_reference_autocomplete
     weight: 5
+    region: content
     settings:
       match_operator: CONTAINS
+      match_limit: 10
       size: 60
       placeholder: ''
-      match_limit: 10
-    region: content
     third_party_settings: {  }
 hidden:
   langcode: true

@@ -19,11 +19,11 @@ bundle: llom_h5p_content
 mode: default
 content:
   field_llom_assignment:
-    weight: 0
+    type: h5p_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: h5p_default
+    weight: 0
     region: content
 hidden:
   field_language: true

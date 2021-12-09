@@ -2,11 +2,11 @@ uuid: 898f0506-9e10-48a8-9700-b6b0ebaa9436
 langcode: en
 status: true
 dependencies:
+  module:
+    - menu_ui
   enforced:
     module:
       - llom_h5p_content
-  module:
-    - menu_ui
 third_party_settings:
   menu_ui:
     available_menus: {  }
