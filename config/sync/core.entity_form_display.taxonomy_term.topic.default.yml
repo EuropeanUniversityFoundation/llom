@@ -19,18 +19,18 @@ content:
     weight: 2
     region: content
     settings:
-      placeholder: ''
       rows: 5
+      placeholder: ''
     third_party_settings: {  }
   field_topic_icon:
+    type: material_icons
     weight: 1
+    region: content
     settings:
       allow_style: true
       default_style: ''
       allow_classes: true
     third_party_settings: {  }
-    type: material_icons
-    region: content
   langcode:
     type: language_select
     weight: 3
@@ -54,9 +54,9 @@ content:
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    settings:
-      display_label: true
     weight: 5
     region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
 hidden: {  }

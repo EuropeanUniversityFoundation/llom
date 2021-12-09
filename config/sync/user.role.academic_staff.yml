@@ -1,7 +1,12 @@
 uuid: b9ca56b4-bf04-4ed6-b07e-78b01204ee30
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - node.type.llom_h5p_content
+  module:
+    - h5peditor
+    - node
 id: academic_staff
 label: 'Academic Staff'
 weight: 3
