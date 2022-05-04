@@ -1,6 +1,6 @@
 <?php
 
-// @codingStandardsIgnoreFile
+// phpcs:ignoreFile
 
 /**
  * @file
@@ -131,15 +131,15 @@ $config['system.performance']['js']['preprocess'] = FALSE;
 $settings['skip_permissions_hardening'] = TRUE;
 
 /**
- * Exclude modules from configuration synchronisation.
+ * Exclude modules from configuration synchronization.
  *
  * On config export sync, no config or dependent config of any excluded module
  * is exported. On config import sync, any config of any installed excluded
  * module is ignored. In the exported configuration, it will be as if the
  * excluded module had never been installed. When syncing configuration, if an
  * excluded module is already installed, it will not be uninstalled by the
- * configuration synchronisation, and dependent configuration will remain
- * intact. This affects only configuration synchronisation; single import and
+ * configuration synchronization, and dependent configuration will remain
+ * intact. This affects only configuration synchronization; single import and
  * export of configuration are not affected.
  *
  * Drupal does not validate or sanity check the list of excluded modules. For
@@ -148,7 +148,7 @@ $settings['skip_permissions_hardening'] = TRUE;
  * anymore.
  *
  * This is an advanced feature and using it means opting out of some of the
- * guarantees the configuration synchronisation provides. It is not recommended
+ * guarantees the configuration synchronization provides. It is not recommended
  * to use this feature with modules that affect Drupal in a major way such as
  * the language or field module.
  */
@@ -170,3 +170,41 @@ $databases['default']['default'] = [
 $settings['trusted_host_patterns'] = array(
   '^' . preg_quote(getenv('PROJECT_BASE_URL')) . '$',
 );
+
+/* Disable SMTP in local development */
+$config['system.mail']['interface']['default'] = 'php_mail';
+
+/* Assign environment indicator values */
+$env_name = getenv('ENV_NAME');
+$env_fg = '#ffffff';
+switch ($env_name) {
+  case 'Local':
+    $env_bg = '#23923d';
+    break;
+
+  case 'Testing':
+    $env_bg = '#148ea1';
+    break;
+
+  case 'Production':
+    $env_bg = '#d32535';
+    break;
+
+  default:
+    $env_name = 'undefined ENV_NAME';
+    $env_bg = '#ff00bf';
+    break;
+}
+$config['environment_indicator.indicator']['bg_color'] = $env_bg;
+$config['environment_indicator.indicator']['fg_color'] = $env_fg;
+$config['environment_indicator.indicator']['name'] = $env_name;
+
+/* EUF IDP settings */
+#$config['openid_connect.settings.eufidp']['enabled'] = FALSE;
+#$config['openid_connect.settings.eufidp']['settings']['client_id'] = 'real_client_id';
+#$config['openid_connect.settings.eufidp']['settings']['client_secret'] = 'real_client_secret';
+
+/* MyAcademicID settings */
+#$config['openid_connect.settings.myacademicid']['enabled'] = FALSE;
+#$config['openid_connect.settings.myacademicid']['settings']['client_id'] = 'real_client_id';
+#$config['openid_connect.settings.myacademicid']['settings']['client_secret'] = 'real_client_secret';
