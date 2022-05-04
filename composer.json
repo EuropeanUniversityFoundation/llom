@@ -40,6 +40,7 @@
         "drupal/bootstrap": "^3.21",
         "drupal/core-composer-scaffold": "^9.2",
         "drupal/core-recommended": "^9.2",
+        "drupal/environment_indicator": "^4.0",
         "drupal/h5p": "dev-8.x-1.x",
         "drupal/languagefield": "^1.5",
         "drupal/material_icons": "^1.0",

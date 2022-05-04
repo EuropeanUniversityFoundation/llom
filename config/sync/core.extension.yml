@@ -3,7 +3,6 @@ _core:
 module:
   admin_toolbar: 0
   admin_toolbar_links_access_filter: 0
-  admin_toolbar_search: 0
   admin_toolbar_tools: 0
   adminimal_admin_toolbar: 0
   allow_iframed_site: 0
@@ -24,6 +23,7 @@ module:
   dblog: 0
   dynamic_page_cache: 0
   editor: 0
+  environment_indicator: 0
   field: 0
   field_ui: 0
   file: 0
