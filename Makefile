@@ -21,12 +21,11 @@ up:
 	@echo "Starting up containers for $(PROJECT_NAME)..."
 	docker-compose pull
 	docker-compose up -d --remove-orphans
-	@echo "Find the site at http://$(PROJECT_BASE_URL):${HTTP_PORT}"
+	@echo "Find the site at http://$(PROJECT_BASE_URL):${PROJECT_PORT}"
 
 .PHONY: mutagen
 mutagen:
-	docker-compose up -d mutagen
-	mutagen project start -f mutagen/config.yml
+	mutagen-compose up
 
 ## down	:	Stop containers.
 .PHONY: down
@@ -37,7 +36,7 @@ down: stop
 start:
 	@echo "Starting containers for $(PROJECT_NAME) from where you left off..."
 	@docker-compose start
-	@echo "Find the site at http://$(PROJECT_BASE_URL):${HTTP_PORT}"
+	@echo "Find the site at http://$(PROJECT_BASE_URL):${PROJECT_PORT}"
 
 ## stop	:	Stop containers.
 .PHONY: stop
@@ -78,12 +77,6 @@ composer:
 .PHONY: drush
 drush:
 	docker exec $(shell docker ps --filter name='^/$(PROJECT_NAME)_php' --format "{{ .ID }}") drush -r $(DRUPAL_ROOT) $(filter-out $@,$(MAKECMDGOALS))
-
-## node-shell	:	Access `node` container via shell.
-##		DEPRECATED by the new functionality of `make shell`
-.PHONY: node-shell
-node-shell:
-	docker exec -ti -e COLUMNS=$(shell tput cols) -e LINES=$(shell tput lines) $(shell docker ps --filter name='$(PROJECT_NAME)_node' --format "{{ .ID }}") sh
 
 ## logs	:	View containers logs.
 ##		You can optinally pass an argument with the service name to limit logs
