@@ -38,8 +38,8 @@
         "drupal/adminimal_theme": "^1.6",
         "drupal/allow_iframed_site": "^3.0",
         "drupal/bootstrap": "^3.21",
-        "drupal/core-composer-scaffold": "^9.2",
-        "drupal/core-recommended": "^9.2",
+        "drupal/core-composer-scaffold": "^9.4.8",
+        "drupal/core-recommended": "^9.4.8",
         "drupal/environment_indicator": "^4.0",
         "drupal/h5p": "dev-8.x-1.x",
         "drupal/languagefield": "^1.5",
@@ -50,7 +50,7 @@
         "drupal/registration_role": "^1.1",
         "drupal/restui": "^1.19",
         "drupal/smtp": "^1.0@beta",
-        "drush/drush": "^10.0.0",
+        "drush/drush": "^11.0.0",
         "oomphinc/composer-installers-extender": "^2.0",
         "vlucas/phpdotenv": "^2.4",
         "webflo/drupal-finder": "^1.0.0",
@@ -58,7 +58,7 @@
         "zaporylie/composer-drupal-optimizations": "^1.0"
     },
     "require-dev": {
-        "drupal/core-dev": "^9.2",
+        "drupal/core-dev": "^9.4.8",
         "drupal/devel": "^4.1"
     },
     "conflict": {
