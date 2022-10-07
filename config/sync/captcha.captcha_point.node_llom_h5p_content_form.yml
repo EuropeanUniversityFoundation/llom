@@ -4,4 +4,4 @@ status: false
 dependencies: {  }
 formId: node_llom_h5p_content_form
 captchaType: default
-label: null
+label: node_llom_h5p_content_form
