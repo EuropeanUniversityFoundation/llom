@@ -1278,20 +1278,20 @@
         },
         {
             "name": "drupal/admin_toolbar",
-            "version": "3.1.1",
+            "version": "3.2.1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/admin_toolbar.git",
-                "reference": "3.1.1"
+                "reference": "3.2.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/admin_toolbar-3.1.1.zip",
-                "reference": "3.1.1",
-                "shasum": "a66ce69cd7e56f1cc43797dc2a58d6eab367d353"
+                "url": "https://ftp.drupal.org/files/projects/admin_toolbar-3.2.1.zip",
+                "reference": "3.2.1",
+                "shasum": "7a4bfb716e269be4ca03b7f04e29e4439ec6cf93"
             },
             "require": {
-                "drupal/core": "^8.8.0 || ^9.0 || ^10.0"
+                "drupal/core": "^8.8.0 || ^9.0"
             },
             "require-dev": {
                 "drupal/admin_toolbar_tools": "*"
@@ -1299,8 +1299,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "3.1.1",
-                    "datestamp": "1658802262",
+                    "version": "3.2.1",
+                    "datestamp": "1665044276",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -1573,17 +1573,17 @@
         },
         {
             "name": "drupal/captcha",
-            "version": "1.4.0",
+            "version": "1.5.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/captcha.git",
-                "reference": "8.x-1.4"
+                "reference": "8.x-1.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/captcha-8.x-1.4.zip",
-                "reference": "8.x-1.4",
-                "shasum": "bd340d1c62e9960cebbf482ecc5ef24421542ec6"
+                "url": "https://ftp.drupal.org/files/projects/captcha-8.x-1.5.zip",
+                "reference": "8.x-1.5",
+                "shasum": "36284ece721d3534d0c3bd6ae01cdb549920a024"
             },
             "require": {
                 "drupal/core": ">=8.9 <11"
@@ -1591,8 +1591,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.4",
-                    "datestamp": "1658338565",
+                    "version": "8.x-1.5",
+                    "datestamp": "1662751122",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -1948,26 +1948,26 @@
         },
         {
             "name": "drupal/environment_indicator",
-            "version": "4.0.7",
+            "version": "4.0.10",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/environment_indicator.git",
-                "reference": "4.0.7"
+                "reference": "4.0.10"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/environment_indicator-4.0.7.zip",
-                "reference": "4.0.7",
-                "shasum": "9a7f9b78dd2890630301de2dff4e248de85ea32b"
+                "url": "https://ftp.drupal.org/files/projects/environment_indicator-4.0.10.zip",
+                "reference": "4.0.10",
+                "shasum": "461c8099e6f9e3ac140534b1608f5e85b83c2025"
             },
             "require": {
-                "drupal/core": "^8.8 || ^9"
+                "drupal/core": "^9.2 || ^10"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "4.0.7",
-                    "datestamp": "1658608643",
+                    "version": "4.0.10",
+                    "datestamp": "1664535402",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -1986,10 +1986,6 @@
                 {
                     "name": "mrfelton",
                     "homepage": "https://www.drupal.org/user/305669"
-                },
-                {
-                    "name": "pratik_kamble",
-                    "homepage": "https://www.drupal.org/user/3204909"
                 }
             ],
             "description": "Adds a color indicator for the different environments.",
@@ -2161,28 +2157,28 @@
         },
         {
             "name": "drupal/recaptcha",
-            "version": "3.0.0",
+            "version": "3.1.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/recaptcha.git",
-                "reference": "8.x-3.0"
+                "reference": "8.x-3.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/recaptcha-8.x-3.0.zip",
-                "reference": "8.x-3.0",
-                "shasum": "5f1b179184b105ad6c121ab5505054e1e99331b9"
+                "url": "https://ftp.drupal.org/files/projects/recaptcha-8.x-3.1.zip",
+                "reference": "8.x-3.1",
+                "shasum": "8d0b8567b7f42d3d735ad5f4cb484aa7a49cf4d9"
             },
             "require": {
-                "drupal/captcha": "^1.0.0-alpha1",
-                "drupal/core": "^8 || ^9",
+                "drupal/captcha": "^1.4",
+                "drupal/core": "^8.9 || ^9 || ^10",
                 "google/recaptcha": "^1.2"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-3.0",
-                    "datestamp": "1591216085",
+                    "version": "8.x-3.1",
+                    "datestamp": "1664590356",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -2203,14 +2199,6 @@
                     "homepage": "https://www.drupal.org/node/147903/committers"
                 },
                 {
-                    "name": "amykhailova",
-                    "homepage": "https://www.drupal.org/user/2892725"
-                },
-                {
-                    "name": "diolan",
-                    "homepage": "https://www.drupal.org/user/2336786"
-                },
-                {
                     "name": "hass",
                     "homepage": "https://www.drupal.org/user/85918"
                 },
@@ -2223,8 +2211,16 @@
                     "homepage": "https://www.drupal.org/user/370574"
                 },
                 {
+                    "name": "Liam Morland",
+                    "homepage": "https://www.drupal.org/user/493050"
+                },
+                {
                     "name": "rfay",
                     "homepage": "https://www.drupal.org/user/30906"
+                },
+                {
+                    "name": "RobLoach",
+                    "homepage": "https://www.drupal.org/user/61114"
                 },
                 {
                     "name": "soxofaan",
@@ -2421,17 +2417,17 @@
         },
         {
             "name": "drupal/smtp",
-            "version": "1.0.0",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/smtp.git",
-                "reference": "8.x-1.0"
+                "reference": "8.x-1.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/smtp-8.x-1.0.zip",
-                "reference": "8.x-1.0",
-                "shasum": "c40cc7a3c20d3f743e3a4e53f4cc296748da89fd"
+                "url": "https://ftp.drupal.org/files/projects/smtp-8.x-1.1.zip",
+                "reference": "8.x-1.1",
+                "shasum": "775de92ad19b531691b7e79c6f832416ae6ae892"
             },
             "require": {
                 "drupal/core": "^8.8 || ^9",
@@ -2443,8 +2439,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.0",
-                    "datestamp": "1601070985",
+                    "version": "8.x-1.1",
+                    "datestamp": "1660325085",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -2460,16 +2456,16 @@
             ],
             "authors": [
                 {
-                    "name": "LukeLast",
-                    "homepage": "https://www.drupal.org/user/30151"
-                },
-                {
                     "name": "japerry",
                     "homepage": "https://www.drupal.org/user/45640"
                 },
                 {
                     "name": "josesanmartin",
                     "homepage": "https://www.drupal.org/user/72012"
+                },
+                {
+                    "name": "LukeLast",
+                    "homepage": "https://www.drupal.org/user/30151"
                 },
                 {
                     "name": "oadaeh",
@@ -4036,16 +4032,16 @@
         },
         {
             "name": "phpmailer/phpmailer",
-            "version": "v6.5.1",
+            "version": "v6.6.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPMailer/PHPMailer.git",
-                "reference": "dd803df5ad7492e1b40637f7ebd258fee5ca7355"
+                "reference": "a94fdebaea6bd17f51be0c2373ab80d3d681269b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPMailer/PHPMailer/zipball/dd803df5ad7492e1b40637f7ebd258fee5ca7355",
-                "reference": "dd803df5ad7492e1b40637f7ebd258fee5ca7355",
+                "url": "https://api.github.com/repos/PHPMailer/PHPMailer/zipball/a94fdebaea6bd17f51be0c2373ab80d3d681269b",
+                "reference": "a94fdebaea6bd17f51be0c2373ab80d3d681269b",
                 "shasum": ""
             },
             "require": {
@@ -4057,11 +4053,11 @@
             "require-dev": {
                 "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
                 "doctrine/annotations": "^1.2",
-                "php-parallel-lint/php-console-highlighter": "^0.5.0",
-                "php-parallel-lint/php-parallel-lint": "^1.3",
+                "php-parallel-lint/php-console-highlighter": "^1.0.0",
+                "php-parallel-lint/php-parallel-lint": "^1.3.2",
                 "phpcompatibility/php-compatibility": "^9.3.5",
                 "roave/security-advisories": "dev-latest",
-                "squizlabs/php_codesniffer": "^3.6.0",
+                "squizlabs/php_codesniffer": "^3.6.2",
                 "yoast/phpunit-polyfills": "^1.0.0"
             },
             "suggest": {
@@ -4102,7 +4098,7 @@
             "description": "PHPMailer is a full-featured email creation and transfer class for PHP",
             "support": {
                 "issues": "https://github.com/PHPMailer/PHPMailer/issues",
-                "source": "https://github.com/PHPMailer/PHPMailer/tree/v6.5.1"
+                "source": "https://github.com/PHPMailer/PHPMailer/tree/v6.6.4"
             },
             "funding": [
                 {
@@ -4110,7 +4106,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-08-18T09:14:16+00:00"
+            "time": "2022-08-22T09:22:00+00:00"
         },
         {
             "name": "psr/cache",
