@@ -39,7 +39,7 @@
         "drupal/smtp": "^1.0@beta",
         "drush/drush": "^11.0.0",
         "oomphinc/composer-installers-extender": "^2.0",
-        "vlucas/phpdotenv": "^2.4",
+        "vlucas/phpdotenv": "^4.1",
         "webflo/drupal-finder": "^1.0.0",
         "webmozart/path-util": "^2.3",
         "zaporylie/composer-drupal-optimizations": "^1.0"
