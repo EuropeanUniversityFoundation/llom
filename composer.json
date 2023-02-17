@@ -26,6 +26,7 @@
         "drupal/bootstrap": "^3.21",
         "drupal/core-composer-scaffold": "~9.4.8",
         "drupal/core-recommended": "~9.4.8",
+        "drupal/devel_entity_updates": "^4.1",
         "drupal/environment_indicator": "^4.0",
         "drupal/h5p": "^2.0@alpha",
         "drupal/languagefield": "^1.5",
@@ -99,6 +100,9 @@
         "patches": {
             "drupal/h5p": {
                 "Code assumes score is int, not stored in case of double": "https://www.drupal.org/files/issues/2019-10-09/3086807_1.patch"
+            },
+            "h5p/h5p-editor": {
+                "Fix PHP 8 deprecation issue": "https://github.com/h5p/h5p-editor-php-library/commit/2edfd9b9e72d20e3b61f17a6836da21edb370624.diff"
             }
         },
         "drupal-scaffold": {
