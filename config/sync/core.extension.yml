@@ -20,8 +20,6 @@ module:
   contextual: 0
   datetime: 0
   dblog: 0
-  devel: 0
-  devel_entity_updates: 0
   dynamic_page_cache: 0
   editor: 0
   environment_indicator: 0
