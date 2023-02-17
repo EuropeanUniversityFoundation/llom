@@ -12,22 +12,8 @@
     ],
     "repositories": [
         {
-            "type": "package",
-            "package": {
-                "name": "drupal/h5p",
-                "type": "drupal-module",
-                "version": "dev-8.x-1.x",
-                "source": {
-                    "type": "git",
-                    "url": "https://git.drupalcode.org/project/h5p.git",
-                    "reference": "471d2b95f73f93e24866892d31a6ea1e30afd3f3"
-                }
-            }
-        },
-        {
             "type": "composer",
-            "url": "https://packages.drupal.org/8",
-            "exclude": ["drupal/h5p"]
+            "url": "https://packages.drupal.org/8"
         }
     ],
     "require": {
@@ -38,10 +24,11 @@
         "drupal/adminimal_theme": "^1.6",
         "drupal/allow_iframed_site": "^3.0",
         "drupal/bootstrap": "^3.21",
-        "drupal/core-composer-scaffold": "^9.4.8",
-        "drupal/core-recommended": "^9.4.8",
+        "drupal/core-composer-scaffold": "~9.4.8",
+        "drupal/core-recommended": "~9.4.8",
+        "drupal/devel_entity_updates": "^4.1",
         "drupal/environment_indicator": "^4.0",
-        "drupal/h5p": "dev-8.x-1.x",
+        "drupal/h5p": "^2.0@alpha",
         "drupal/languagefield": "^1.5",
         "drupal/material_icons": "^1.0",
         "drupal/module_filter": "^3.1",
@@ -52,13 +39,13 @@
         "drupal/smtp": "^1.0@beta",
         "drush/drush": "^11.0.0",
         "oomphinc/composer-installers-extender": "^2.0",
-        "vlucas/phpdotenv": "^2.4",
+        "vlucas/phpdotenv": "^4.1",
         "webflo/drupal-finder": "^1.0.0",
         "webmozart/path-util": "^2.3",
         "zaporylie/composer-drupal-optimizations": "^1.0"
     },
     "require-dev": {
-        "drupal/core-dev": "^9.4.8",
+        "drupal/core-dev": "~9.4.8",
         "drupal/devel": "^4.1"
     },
     "conflict": {
@@ -112,8 +99,10 @@
         },
         "patches": {
             "drupal/h5p": {
-                "Code assumes score is int, not stored in case of double": "https://www.drupal.org/files/issues/2019-10-09/3086807_1.patch",
-                "Drupal 9 compatibility": "https://www.drupal.org/files/issues/2020-04-19/d9-compatibility-3129142-3.patch"
+                "Code assumes score is int, not stored in case of double": "https://www.drupal.org/files/issues/2019-10-09/3086807_1.patch"
+            },
+            "h5p/h5p-editor": {
+                "Fix PHP 8 deprecation issue": "https://github.com/h5p/h5p-editor-php-library/commit/2edfd9b9e72d20e3b61f17a6836da21edb370624.diff"
             }
         },
         "drupal-scaffold": {
