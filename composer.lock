@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2abc2e0774be7de92ae3cb3348ab5217",
+    "content-hash": "1b7eaf3620c59a674cb9d15058c8ca61",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1972,13 +1972,69 @@
         },
         {
             "name": "drupal/h5p",
-            "version": "dev-8.x-1.x",
+            "version": "2.0.0-alpha3",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/h5p.git",
-                "reference": "471d2b95f73f93e24866892d31a6ea1e30afd3f3"
+                "reference": "2.0.0-alpha3"
             },
-            "type": "drupal-module"
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/h5p-2.0.0-alpha3.zip",
+                "reference": "2.0.0-alpha3",
+                "shasum": "50db2b5622abe5b25431bcd9fef1f06dd1afaa71"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9",
+                "h5p/h5p-core": "1.24.4",
+                "h5p/h5p-editor": "1.24.4"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.0.0-alpha3",
+                    "datestamp": "1671040448",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Alpha releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "catch",
+                    "homepage": "https://www.drupal.org/user/35733"
+                },
+                {
+                    "name": "falcon",
+                    "homepage": "https://www.drupal.org/user/530912"
+                },
+                {
+                    "name": "icc",
+                    "homepage": "https://www.drupal.org/user/823190"
+                },
+                {
+                    "name": "otacke",
+                    "homepage": "https://www.drupal.org/user/3566173"
+                },
+                {
+                    "name": "paalj",
+                    "homepage": "https://www.drupal.org/user/1091732"
+                },
+                {
+                    "name": "thomasmars",
+                    "homepage": "https://www.drupal.org/user/3205159"
+                }
+            ],
+            "description": "Drupal H5P Module.",
+            "homepage": "http://drupal.org/project/h5p",
+            "support": {
+                "source": "https://git.drupalcode.org/project/h5p"
+            }
         },
         {
             "name": "drupal/languagefield",
@@ -3158,6 +3214,128 @@
                 }
             ],
             "time": "2022-06-20T21:43:03+00:00"
+        },
+        {
+            "name": "h5p/h5p-core",
+            "version": "1.24.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/h5p/h5p-php-library.git",
+                "reference": "52b1ae5556d0f846b004f8cedc01a1a3cea7bdf8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/h5p/h5p-php-library/zipball/52b1ae5556d0f846b004f8cedc01a1a3cea7bdf8",
+                "reference": "52b1ae5556d0f846b004f8cedc01a1a3cea7bdf8",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "h5p.classes.php",
+                    "h5p-development.class.php",
+                    "h5p-file-storage.interface.php",
+                    "h5p-default-storage.class.php",
+                    "h5p-event-base.class.php",
+                    "h5p-metadata.class.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Svein-Tore Griff With",
+                    "email": "with@joubel.com",
+                    "homepage": "http://joubel.com",
+                    "role": "CEO"
+                },
+                {
+                    "name": "Frode Petterson",
+                    "email": "frode.petterson@joubel.com",
+                    "homepage": "http://joubel.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "H5P Core functionality in PHP",
+            "homepage": "https://h5p.org",
+            "keywords": [
+                "content",
+                "h5p",
+                "hvp",
+                "interactive",
+                "quiz"
+            ],
+            "support": {
+                "issues": "https://github.com/h5p/h5p-php-library/issues",
+                "source": "https://github.com/h5p/h5p-php-library/tree/1.24.4"
+            },
+            "time": "2022-12-14T11:44:31+00:00"
+        },
+        {
+            "name": "h5p/h5p-editor",
+            "version": "1.24.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/h5p/h5p-editor-php-library.git",
+                "reference": "dd70892f9e28c99f13bee2881601329d5c6c4a8e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/h5p/h5p-editor-php-library/zipball/dd70892f9e28c99f13bee2881601329d5c6c4a8e",
+                "reference": "dd70892f9e28c99f13bee2881601329d5c6c4a8e",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "h5peditor.class.php",
+                    "h5peditor-file.class.php",
+                    "h5peditor-ajax.class.php",
+                    "h5peditor-storage.interface.php",
+                    "h5peditor-ajax.interface.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Svein-Tore Griff With",
+                    "email": "with@joubel.com",
+                    "homepage": "http://joubel.com",
+                    "role": "CEO"
+                },
+                {
+                    "name": "Frode Petterson",
+                    "email": "frode.petterson@joubel.com",
+                    "homepage": "http://joubel.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "H5P Editor functionality in PHP",
+            "homepage": "https://h5p.org",
+            "keywords": [
+                "content",
+                "editor",
+                "h5p",
+                "hvp",
+                "interactive",
+                "quiz"
+            ],
+            "support": {
+                "issues": "https://github.com/h5p/h5p-editor-php-library/issues",
+                "source": "https://github.com/h5p/h5p-editor-php-library/tree/1.24.4"
+            },
+            "time": "2022-01-20T10:17:49+00:00"
         },
         {
             "name": "laminas/laminas-diactoros",
@@ -12051,7 +12229,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "drupal/h5p": 20,
+        "drupal/h5p": 15,
         "drupal/smtp": 10
     },
     "prefer-stable": true,
