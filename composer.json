@@ -24,8 +24,8 @@
         "drupal/adminimal_theme": "^1.6",
         "drupal/allow_iframed_site": "^3.0",
         "drupal/bootstrap": "^3.21",
-        "drupal/core-composer-scaffold": "~9.4.8",
-        "drupal/core-recommended": "~9.4.8",
+        "drupal/core-composer-scaffold": "~9.5.9",
+        "drupal/core-recommended": "~9.5.9",
         "drupal/devel_entity_updates": "^4.1",
         "drupal/environment_indicator": "^4.0",
         "drupal/h5p": "^2.0@alpha",
@@ -45,7 +45,7 @@
         "zaporylie/composer-drupal-optimizations": "^1.0"
     },
     "require-dev": {
-        "drupal/core-dev": "~9.4.8",
+        "drupal/core-dev": "~9.5.9",
         "drupal/devel": "^4.1"
     },
     "conflict": {
