@@ -13,7 +13,7 @@ module:
   block_content: 0
   breakpoint: 0
   captcha: 0
-  ckeditor: 0
+  ckeditor5: 0
   comment: 0
   config: 0
   contact: 0
@@ -50,7 +50,6 @@ module:
   page_cache: 0
   path: 0
   path_alias: 0
-  rdf: 0
   recaptcha: 0
   registration_role: 0
   rest: 0
@@ -71,8 +70,6 @@ module:
   views: 10
   standard: 1000
 theme:
-  bartik: 0
-  seven: 0
   bootstrap: 0
-  adminimal_theme: 0
+  claro: 0
 profile: standard
