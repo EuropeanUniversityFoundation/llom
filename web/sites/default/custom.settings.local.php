@@ -33,7 +33,7 @@
  * @see https://wiki.php.net/rfc/expectations
  */
 assert_options(ASSERT_ACTIVE, TRUE);
-\Drupal\Component\Assertion\Handle::register();
+assert_options(ASSERT_EXCEPTION, TRUE);
 
 /**
  * Enable custom development services.
@@ -166,28 +166,36 @@ $databases['default']['default'] = [
   'username' => getenv('DB_USER'),
 ];
 
+$databases['default']['default']['init_commands'] = [
+  'isolation_level' => 'SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED',
+];
+
 /* Trusted host settings */
-$settings['trusted_host_patterns'] = array(
+$settings['trusted_host_patterns'] = [
   '^' . preg_quote(getenv('PROJECT_BASE_URL')) . '$',
-);
+];
 
 /* Disable SMTP in local development */
-$config['system.mail']['interface']['default'] = 'php_mail';
+#$config['system.mail']['interface']['default'] = 'php_mail';
 
 /* Assign environment indicator values */
 $env_name = getenv('ENV_NAME');
 $env_fg = '#ffffff';
 switch ($env_name) {
   case 'Local':
-    $env_bg = '#23923d';
+    $env_bg = '#198754';
     break;
 
   case 'Testing':
-    $env_bg = '#148ea1';
+    $env_bg = '#087990';
+    break;
+
+  case 'Staging':
+    $env_bg = '#0a58ca';
     break;
 
   case 'Production':
-    $env_bg = '#d32535';
+    $env_bg = '#b02a37';
     break;
 
   default:
@@ -199,6 +207,9 @@ $config['environment_indicator.indicator']['bg_color'] = $env_bg;
 $config['environment_indicator.indicator']['fg_color'] = $env_fg;
 $config['environment_indicator.indicator']['name'] = $env_name;
 
+/* OpenID Connect settings */
+#$config['openid_connect.settings']['user_login_display'] = 'hidden';
+
 /* EUF IDP settings */
 #$config['openid_connect.settings.eufidp']['enabled'] = FALSE;
 #$config['openid_connect.settings.eufidp']['settings']['client_id'] = 'real_client_id';
@@ -208,3 +219,6 @@ $config['environment_indicator.indicator']['name'] = $env_name;
 #$config['openid_connect.settings.myacademicid']['enabled'] = FALSE;
 #$config['openid_connect.settings.myacademicid']['settings']['client_id'] = 'real_client_id';
 #$config['openid_connect.settings.myacademicid']['settings']['client_secret'] = 'real_client_secret';
+
+/* Cookies module settings */
+#$config['cookies.config']['cookie_domain'] = getenv('PROJECT_BASE_URL');
