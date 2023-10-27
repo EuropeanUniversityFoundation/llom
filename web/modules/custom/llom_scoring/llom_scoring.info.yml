@@ -1,7 +1,7 @@
 name: 'LLOM Scoring'
 type: module
 description: 'LLOM Scoring'
-core_version_requirement: ^8 || ^9
+core_version_requirement: ^8 || ^9 || ^10
 package: 'LLOM'
 dependencies:
   - llom_h5p_content

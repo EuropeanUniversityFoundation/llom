@@ -1,7 +1,7 @@
 name: 'LLOM H5P Content'
 type: module
 description: 'LLOM H5P Content'
-core_version_requirement: ^8 || ^9
+core_version_requirement: ^8 || ^9 || ^10
 package: 'LLOM'
 dependencies:
   - h5p:h5p
