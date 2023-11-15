@@ -14,22 +14,13 @@ class CustomRouteSubscriber extends RouteSubscriberBase {
   /**
    * {@inheritdoc}
    */
-  public static function getSubscribedEvents() {
-    $events = parent::getSubscribedEvents();
-    $events[RoutingEvents::ALTER] = ['onAlterRoutes', -300];
-    return $events;
-  }
-
-  /**
-   * {@inheritdoc}
-   */
   protected function alterRoutes(RouteCollection $collection) {
     if ($route = $collection->get('user.logout')) {
       $route->setDefaults([
         '_controller' => '\Drupal\llom_redirect\Controller\CustomUserLogoutController::logout',
       ]);
       $route->setOptions([
-        'no_cache' => TRUE 
+        'no_cache' => TRUE
       ]);
     }
   }

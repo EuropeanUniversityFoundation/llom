@@ -5,6 +5,7 @@ dependencies:
   config:
     - node.type.llom_h5p_content
   module:
+    - file
     - h5peditor
     - node
 id: academic_staff
@@ -14,6 +15,7 @@ is_admin: null
 permissions:
   - 'access editor'
   - 'create llom_h5p_content content'
+  - 'delete own files'
   - 'delete own llom_h5p_content content'
   - 'edit own llom_h5p_content content'
   - 'view own unpublished content'
