@@ -25,8 +25,8 @@
         "drupal/allow_iframed_site": "^3.0",
         "drupal/bootstrap": "^3.21",
         "drupal/captcha": "^2.0",
-        "drupal/core-composer-scaffold": "~10.1.6",
-        "drupal/core-recommended": "~10.1.6",
+        "drupal/core-composer-scaffold": "~10.2.4",
+        "drupal/core-recommended": "~10.2.4",
         "drupal/devel": "^5.1",
         "drupal/devel_entity_updates": "^4.1",
         "drupal/environment_indicator": "^4.0",
@@ -38,7 +38,7 @@
         "drupal/registration_role": "^2.0",
         "drupal/restui": "^1.19",
         "drupal/smtp": "^1.0@beta",
-        "drupal/upgrade_status": "^4.0",
+        "drupal/upgrade_status": "^4.1",
         "drush/drush": "^12",
         "oomphinc/composer-installers-extender": "^2.0",
         "vlucas/phpdotenv": "^4.1",
@@ -47,7 +47,7 @@
         "zaporylie/composer-drupal-optimizations": "^1.0"
     },
     "require-dev": {
-        "drupal/core-dev": "~10.1.6"
+        "drupal/core-dev": "~10.2.4"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -63,7 +63,8 @@
             "drupal/core-composer-scaffold": true,
             "oomphinc/composer-installers-extender": true,
             "zaporylie/composer-drupal-optimizations": true,
-            "phpstan/extension-installer": true
+            "phpstan/extension-installer": true,
+            "php-http/discovery": true
         }
     },
     "autoload": {
