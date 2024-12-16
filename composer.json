@@ -39,7 +39,7 @@
         "drupal/restui": "^1.19",
         "drupal/smtp": "^1.0@beta",
         "drupal/upgrade_status": "^4.1",
-        "drush/drush": "^12",
+        "drush/drush": "^13.3",
         "oomphinc/composer-installers-extender": "^2.0",
         "vlucas/phpdotenv": "^4.1",
         "webflo/drupal-finder": "^1.0.0",
