@@ -2,7 +2,6 @@ _core:
   default_config_hash: R4IF-ClDHXxblLcG0L7MgsLvfBIMAvi_skumNFQwkDc
 module:
   admin_toolbar: 0
-  admin_toolbar_links_access_filter: 0
   admin_toolbar_tools: 0
   adminimal_admin_toolbar: 0
   allow_iframed_site: 0
@@ -66,7 +65,6 @@ module:
   taxonomy: 0
   text: 0
   toolbar: 0
-  tour: 0
   update: 0
   user: 0
   views_ui: 0
