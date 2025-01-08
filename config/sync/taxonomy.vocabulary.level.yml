@@ -8,3 +8,4 @@ name: Level
 vid: level
 description: 'Level of the Assignment'
 weight: 0
+new_revision: false
