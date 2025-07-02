@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Drupal\llom_scoring\Entity;
 
 use Drupal\Core\Entity\ContentEntityBase;
@@ -23,9 +22,11 @@ use Drupal\Core\Field\BaseFieldDefinition;
  *   },
  * )
  */
-
 class Score extends ContentEntityBase implements ContentEntityInterface {
 
+  /**
+   * {@inheritdoc}
+   */
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
 
     // Standard field, used as unique if primary index.
@@ -40,39 +41,39 @@ class Score extends ContentEntityBase implements ContentEntityInterface {
       ->setDescription(t('The UUID of the Score entity.'))
       ->setReadOnly(TRUE);
 
-    //entity reference to the user
+    // Entity reference to the user.
     $fields['uid'] = BaseFieldDefinition::create('entity_reference')
       ->setLabel(t('User ID'))
       ->setDescription(t('The user ID of the Score'))
-      ->setSettings(array(
+      ->setSettings([
         'target_type' => 'user',
         'default_value' => 0,
-      ));
+      ]);
 
-    //entity reference to the parent node
+    // Entity reference to the parent node.
     $fields['nid'] = BaseFieldDefinition::create('entity_reference')
       ->setLabel(t('Parent Node ID'))
       ->setDescription(t('The ID of the parent node'))
-      ->setSettings(array(
+      ->setSettings([
         'target_type' => 'node',
         'default_value' => 0,
-      ));
+      ]);
 
-    // The obtained score
+    // The obtained score.
     $fields['score'] = BaseFieldDefinition::create('decimal')
       ->setLabel(t("Score"))
       ->setDescription(t('The obtained score'))
-      ->setSettings(array(
+      ->setSettings([
         'precision' => 10,
         'scale' => 1,
-      ));
+      ]);
 
-    // The max score of the question
+    // The max score of the question.
     $fields['max_score'] = BaseFieldDefinition::create('integer')
       ->setLabel(t("Max Score"))
       ->setDescription(t('The Max Score for the assignment'));
 
-    // timestamp of the score
+    // Timestamp of the score.
     $fields['time'] = BaseFieldDefinition::create('timestamp')
       ->setLabel(t("Timestamp"))
       ->setDescription(t('Timestamp of the score'));

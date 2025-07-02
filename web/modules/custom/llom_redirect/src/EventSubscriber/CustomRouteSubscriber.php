@@ -3,7 +3,6 @@
 namespace Drupal\llom_redirect\EventSubscriber;
 
 use Drupal\Core\Routing\RouteSubscriberBase;
-use Drupal\Core\Routing\RoutingEvents;
 use Symfony\Component\Routing\RouteCollection;
 
 /**
@@ -20,7 +19,7 @@ class CustomRouteSubscriber extends RouteSubscriberBase {
         '_controller' => '\Drupal\llom_redirect\Controller\CustomUserLogoutController::logout',
       ]);
       $route->setOptions([
-        'no_cache' => TRUE
+        'no_cache' => TRUE,
       ]);
     }
   }
