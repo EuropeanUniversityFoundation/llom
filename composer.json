@@ -25,8 +25,8 @@
         "drupal/allow_iframed_site": "^3.0",
         "drupal/bootstrap": "^3.21",
         "drupal/captcha": "^2.0",
-        "drupal/core-composer-scaffold": "~10.5.0",
-        "drupal/core-recommended": "~10.5.0",
+        "drupal/core-composer-scaffold": "~10.6.5",
+        "drupal/core-recommended": "~10.6.5",
         "drupal/devel": "^5.1",
         "drupal/devel_entity_updates": "^4.1",
         "drupal/environment_indicator": "^4.0",
@@ -47,7 +47,7 @@
         "zaporylie/composer-drupal-optimizations": "^1.0"
     },
     "require-dev": {
-        "drupal/core-dev": "~10.5.0"
+        "drupal/core-dev": "~10.6.5"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -103,7 +103,8 @@
         },
         "patches": {
             "drupal/h5p": {
-                "Code assumes score is int, not stored in case of double": "https://www.drupal.org/files/issues/2019-10-09/3086807_1.patch"
+                "Code assumes score is int, not stored in case of double": "https://www.drupal.org/files/issues/2019-10-09/3086807_1.patch",
+                "Fixes 3578071": "https://www.drupal.org/files/issues/2026-03-12/h5p-stub-resetHubOrganizationData-3578071-1.patch"
             }
         },
         "drupal-scaffold": {
