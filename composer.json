@@ -103,7 +103,8 @@
         },
         "patches": {
             "drupal/h5p": {
-                "Code assumes score is int, not stored in case of double": "https://www.drupal.org/files/issues/2019-10-09/3086807_1.patch"
+                "Code assumes score is int, not stored in case of double": "https://www.drupal.org/files/issues/2019-10-09/3086807_1.patch",
+                "Fixes 3578071": "https://www.drupal.org/files/issues/2026-03-12/h5p-stub-resetHubOrganizationData-3578071-1.patch"
             }
         },
         "drupal-scaffold": {
